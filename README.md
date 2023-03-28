@@ -1,5 +1,5 @@
 <div align=center>
-    <img src="./Images/logo.png" width="90px">
+    <a href="./README.md"><img src="./Images/logo.png" width="90px"></a>
     <h1 align=center><b>DSA.UZ</b></h1>
 </div>
 
