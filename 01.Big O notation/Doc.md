@@ -276,6 +276,16 @@ def count_frequency(arr : list) -> dict:
     return freq_dict
 ```
 
+Bu funksiya berilgan list ichida takrorlangan elementlar sonini sanaydi. Keling pastda qiymat berib ko'ramiz va berilgan qiymatga u qanday javob berishini Output orqali ifodalaymiz.
+
+```python
+count_frequency(["apple", "banana", "apple", "orange", "apple"])
+
+# Output: {'apple': 3, 'banana': 1, 'orange': 1}
+```
+
+Yuqorida ko'rib turganingizdek array ichida takrorlanmaydigan so'zlar bo'lsa **worst case**da bizning funksiyamizni **Space Complexity**si `O(n)` ni tashkil qiladi. Agar omadimiz kelib takrorlanuvchi so'zlar bo'lsa n ta emas 1 ta ham bo'lishi mumkin.
+
 <br>
 
 ### **Quadratic Space**
@@ -291,6 +301,20 @@ def generate_pairs(arr : list) -> list:
     return pairs
 ```
 
+Yuqoridagi funksiya list ichidagi har bir elementni sherik qilib `pairs` degan yangi listga qo'shib boradi.
+
+```python
+generate_pairs([1, 2, 3])
+
+# Output: [(3, 3), (3, 6), (3, 9), (6, 3), (6, 6), (6, 9), (9, 3), (9, 6), (9, 9)]
+```
+
+Ko'rib turibsizki listimiz hajmi qancha kattalashsa qaytariladigan qiymat soni ham uning kvadratiga teng bo'ladi. Yuqoridagi misolda bizning listimizda 3 ta element bor edi ammo funksiya qaytargan yangi list esa 9ta elementdan iborat bo'ldi. Shuning uchun ham biz uni <code>O(n<sup>2</sup>)</code> deb o'lchaymiz.
+
 <br>
 
-[Asosiy sahifaga qaytish](../README.md)
+Yana bir necha misolla keltirishimiz mumkin ammo qolganini sayohatimiz davomida o'rganib ketamiz. Hozircha shular edi.
+
+[➡️ Keyingi darsga o'tish](#)
+
+[⬅️ Asosiy sahifaga qaytish](../README.md) 
