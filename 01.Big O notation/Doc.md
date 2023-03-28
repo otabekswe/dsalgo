@@ -2,36 +2,7 @@
 
 > Algorithm - muammoni yechish uchun harakatlar ketma-ketligiga aytiladi.
 
-Bilamizki hayotimizda ko'p narsalar o'lchovli va bularga misol qilib: vaqt, og'irlik, hajm va shu kabi o'lchovlarni olishimiz mumkin. Demak barcha narsalarda o'lcham bo'lgani kabi `Data Structure` va `Algorithm`larda ham bor.
-
-Uzunlikni lineykada, suvni litr o'lchagich va og'irlikni tarozida o'lchaymiz.`Algorithm` va `Data Structure`larni esa **`Big O`** da o'lchaymiz. Ammo qanday qilib?
-
-
-> `Algoritm`lar - asosan harakatlar soniga qarab o'lchaniladi.
-
-> `Data Structure`lar - asosan xotiradan olinadigan joylar soniga qarab o'lchanadi.
-
----
-
-## **Misollar :**
-
-Tasavvur qiling oldingizda 100ta eshik turibdi va ularning biriga Kungfu-Panda multfilmidagi "Sirli Noma" yashiringan. 99ta xona bo'sh ammo bittasida "Sirli Noma" bor. Vazifangiz o'sha nomani topish. Siz bu yerda nima qilasiz? 
-
-
-<p align=center><img src="../Assets/Images/Doors.avif"></p>
-
-Albatta 1-eshikdan boshlab har bir eshikni ochib xona ichida "Sirli Noma" bormi yo'qmi tekshirasiz. 
-
-<p align=center><img src="../Assets/Images/open%20doors.jpg"></p>
-
-Har bir eshikni ochishimiz bu 1ta operatsiya deb oladigan bo'lsak, eshiklar soni qancha oshgani sari harakatlar ya'ni operatsiyalar soni ham oshib boradi. Agar bizni oldimizda `n`ta eshik bo'lsa biz eng ko'pi bilan `n`ta eshikni ochishimiz kerak deani. Shunday qilib harakatlar sonini biz `n` deb olishimiz mumkin. 
-
-Biz "eng ko'pi bilan" degan iborani ishlatdik va u `worst case` degan tushunchani ilg'or suradi. Algoritmlarda muhim narsa bu **kam harakat** qilish. Shuning uchun ham `best case` bu kam harakat qilish, `worst case` bu ko'p harakat qilish deb olsak bo'ladi.
-
-Biz odatda Big O notation bilan `worst case` o'lchovni xisoblaymiz. Yuqorida berilgan muammoni biz `O(n)` bilan o'lchaymiz. Nima uchun unday? Chunki eshiklar soni `n`ta bo'lsa biz eng ko'pi bilan `n`ta eshikni ochamiz degani. Bu esa `n`ta operatsiyani bajaramiz degani. Shuning uchun ham uni biz `O(n)` bilan o'lchadik.
-
-> O'lchovlar `O()` orqali ifoda qilinadi.
-
+> Data Structure - ma'lumotlarni saqlash va tartibga solish uchun ishlatiladigan konteyner yoki saqlagich.
 
 **Computer Science**da biz ko'pincha algoritmlarning ishlashini tahlil qilishga qiziqamiz. Algoritm ishlash tezligini aniqlash uchun turli xil **input**lar uchun algoritmimiz qancha vaqt sarflayotganini bilishimiz kerak. Misol uchun ro'yxatni tartiblaydigan algoritm yaratsak, u 10 ta raqam uchun qancha vaqt, 100 ta raqam uchun qancha vaqt, 1000 ta raqam  uchun qancha vaqt ketishini o'lchashimiz mumkin.
 
@@ -181,9 +152,47 @@ func juftlar(arry []int) []int {
 
 Yuqorida keltirilgan funksiyani oladigan bo'lsak biz qanchalik kattalikda array bersak u shunchalik ko'p operatsiya bajaradi. Misol uchun `[1, 2, 3, 4, 5]` ni bersak u 5ta sonni ham tekshiadi va ularni ichidan nechtasi juft bo'lsa uni yangi arrayga o'tkazadi. Agar array ichidagi elementlar soni 100ta bo'lsa 100ta operatsiya, `n` ta bo'lsa `n` ta operatsiya sodir qiladi. 
 
-Biz buni `O(n)` ko'rinishda o'lchasak bo'ladi. Chunki qanchalik elementlar ko'p bo'lsa algoritm shunchalik ko'p operatsiya sodir qiladi.
+### **Time Complexity - Vaqt murakkabligi**
+
+Biz buni `O(n)` ko'rinishda o'lchasak bo'ladi. Chunki qanchalik elementlar ko'p bo'lsa algoritm shunchalik ko'p operatsiya bajaradi. Ya'ni siz 100ta elementli array bersangiz funksiyadagi loop 100 marta iteratsiya qiladi, 1000 ta bersangiz 1000 marta iteratsiya qiladi. Har bir iteratsiya esa bu bitta operatisya (harakat) degani.
 
 > Big O notation - algoritmni **worst case** xolati uchun ishlatiladi. Ya'ni worst case - eng yomon xolati deb tarjima qilsak bo'ladi.
 
-Algoritmimiz eng yomon ko'rsatkichda ishlaganda `n` marta ishlaydi deb olsak bo'ladi.
+Biz bu tahlilga algoritmimiz eng yomon ko'rsatkichda ishlaganda `n` marta ishlaydi deb qarasak bo'ladi. Agarda sizning algoritmingiz `O(n)` ko'rsatgichda bo'lsa dasturlashda uni `Linear Time` deb atashadi. Endi esa keling xotiraga ham to'xtalib o'tsak qanday qilib xotirani o'lchashimiz mumkin?
 
+### **Space Complexity**
+
+Biz xotira murakkabligini MB yoki GB larda o'lchamaymiz biz uni ham Big O notation orqali o'lchaymiz. Ammo qanday deyishingiz mumkin? Keling uni ham ko'rib chiqsak.
+
+Yuqoridagi kodni **Time Complexity**si `O(n)` bo'lgan bo'lsa **Space Complexity**si ham `O(n)` bo'layabdi. Ammo nimaga asoslanib, keling tushuntiraman. 
+
+Bu yerda array hajmi oshgani sari biz qaytaradigan `result` nomli array hajmi ham oshib boradi. Agar biz 50ta juft sonlardan iborat array kiritsak u barcha elementlarni `result`ga qo'shishiga to'g'ri keladi chunki ularni 50tasi ham juft. Ya'ni aytib o'tganimdek Big O notation **worst case** holatini o'lchash uchun ishlatiladi. 
+
+Agar biz 100ta element bor array bersak va arraydagi 50ta raqam juft, 50tasi esa toq sonlardan iborat bo'lsa bining ko'rsatgich `O(n/2)` ko'rsatgichni beradi. Ammo foydalanuvchi qanday array berishi bizga noma'lumo bo'lgani uchun ham biz uni `O(n)` deb olaveramiz. Demak bu narsaga tushundingiz deb umid qilaman.
+
+O'lchov birliklari juda ko'p. Ularni ba'zilarini hozir ushbu qo'llanma davomida o'rganishingiz mumkin, qolganlarini esa sayohatimiz va o'rganish paytida kashf qilib ketamiz.
+
+<h2 align=center><b>Time Complexities</b></h2>
+
+### **Constant Time**
+
+### **Constant Time**
+
+### **Logarithmic Time**
+
+### **Quadratic Time**
+
+
+<h2 align=center><b>Space Complexities</b></h2>
+
+### **Constant Space**
+
+### **Constant Space**
+
+### **Logarithmic Space**
+
+### **Quadratic Space**
+
+
+
+[Asosiy sahifaga qaytish](../README.md)

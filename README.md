@@ -1,7 +1,7 @@
 <h1 align=center><b>DSA.UZ</b></h1>
-<p align=center style="font-size: 10px; color : #444">"Ma'lumotlar strukturasi va Algoritmlar" mavzusidagi tasavvurga boy va o'zbek tilidagi qo'llanma!</p>
+<p align=center style="font-size: 8px; color : #444">"Ma'lumotlar strukturasi va Algoritmlar" mavzusidagi tasavvurga boy va o'zbek tilidagi qo'llanma!</p>
 
-## **Kirish**
+<h2 align=center><b>Kirish</b></h2>
 
 `DWCE` (Documentation With Code Exmpales) - Principle bo'yicha yozilgan ushbu qo'llanmada siz o'zingiz o'rganayotgan yoki biladigan dasturlash tilida Algoritmlar va Data Strukturalar qanday qo'llanilishini o'rganishingiz mumkin!
 
@@ -12,15 +12,32 @@ Loihani yozishda biz asosan 3ta "princple"ga amal qildik.
 
 Unday bo'lsa boshladik!
 
-## **Mavzular**
+<h2 align=center><b>Mavzular</b></h2>
 
 1. [Big O notation](./01.Big%20O%20notation/Doc.md)
-2. [Tez Kunda](#)
-3. [Tez Kunda](#)
-4. [Tez Kunda](#)
-5. [Tez Kunda](#)
-6. [Tez Kunda](#)
-7. [Tez Kunda](#)
+2. [Data Structures](#)
+    - [Arrays](#)
+    - [Linked List](#)
+    - [Stack and Queue](#)
+    - [Graph](#)
+    - [Tree](#)
+    - [Trie](#)
+    - [Heap](#)
+    - [Hash Table](#)
+    - [Hash Table](#)
+3. [Algorithms](#)
+    - [Algorithmic Paradigms]()
+    - [Sorting]()
+    - [Searching]()
+    - [Graph Algorithms]()
+    - [Greedy Algorithms]()
+    - [Dynamic Programming]()
+    - [Divide and Conquer]()
 
+Agar sizda hech qanday DSA bo'yicha tajriba yoki ko'nikma bo'lmasa, mavzularni ketma-ketlikda o'rganishni tavsiya qilamiz. Agar sizda bu ko'nikmalar bo'lsa unda o'zingizga qulay mavzuni tanlab o'sha mavzudagi darslarimizdan foydalanishingiz mumkin.
 
+[Menga savol yo'llash uchun Telegram bot](https://t.me/otabekfeedbackbot)
 
+<h3 align=center><b>Kofe olib bermoqchimisiz, unda marhamat!</b></h3>
+
+[Payme orqali](https://payme.uz/@otabek_nurmatov)
