@@ -14,7 +14,9 @@ Loihani yozishda biz asosan 3ta "princple"ga amal qildik.
 2. **Imagine** - `X`ni qanday ishlashini illustratsiyalar bilan tushuntirish.
 3. **How** - `X`ni dasturlash tilida kod orqali qanday ifoda qilish mumkinligi
 
-Unday bo'lsa boshladik!
+Qo'llanmada ba'zi xatoliklarga yo'l qo'ygan bo'lishimiz mumkin. Shuni inobatga olib aytishim kerakki agarda xatolik topsangiz Issues bo'limida xatolik qayerdaligini aytib keting. Agar loihani qo'llab quvatlamoqchi bo'lsangiz, biz contribute uchun ochiqmiz va pull requestlarni loyiq deb topsak uni qabul qilamiz. Taklif va xatoliklarni Issues bo'limida **New Issue** orqali berib ketishingiz mumkin. Oldindan Rahmat 😊
+
+Unday bo'lsa boshladik 🚀!
 
 <h2 align=center><b>Mavzular</b></h2>
 
