@@ -172,27 +172,125 @@ Agar biz 100ta element bor array bersak va arraydagi 50ta raqam juft, 50tasi esa
 
 O'lchov birliklari juda ko'p. Ularni ba'zilarini hozir ushbu qo'llanma davomida o'rganishingiz mumkin, qolganlarini esa sayohatimiz va o'rganish paytida kashf qilib ketamiz.
 
+<br>
+
 <h2 align=center><b>Time Complexities</b></h2>
 
-### **Constant Time**
+### **Constant Time - O(1)**
 
-### **Constant Time**
+Constant - o'zgarmas degan ma'noni anglatadi. Matematikada konstant qiymat nimada bor desa men `pi ≈ 3.14159` ni ayta olaman. Biz constant qiymatni Big O da `O(1)` deb o'lchaymiz. Nima uchun aynan 1 soni keltirilganini tushuntirishga menimcha xojat yo'q chunki qiymat **bir**xil qolishi aytilayabdi. Kelin endi misol bilan ko'rsak
 
-### **Logarithmic Time**
+```python
+def access_element(arr : list, index : int) -> any:
+    return arr[index]
+```
 
-### **Quadratic Time**
+Yuqorida keltirilgan kodda bizning `access_element` funksyamizga istalgan kattalikda input bermaylik u bu ishni qilishga bir xil vaqt sarflaydi. Ya'ni operatsiyalar soni bu yerda 1ta. 
 
+```python
+def sum_of_squares(n : int) -> int:
+    return (n * (n + 1) * (2 * n + 1)) // 6
+```
+
+Bu ham huddi shunday istalgan xajmdagi qiymat bermaylik operatsiyalar soni oshmaydi ya'ni doim bitta operatsiya amalga oshiradi. Shuning uchun ham uni **worst case**da `O(1)` deb o'lchaymiz. 
+
+<br>
+
+### **Linear Time - O(n)**
+
+Linear - Chiziqli degan ma'noni anglatadi. Tasavvur qiling oldingizda 100ta xona bor va har bir xona eshigida uning raqami bor. Xonalarni 99tasi bo'sha ammo bittasida xazina yashiringan. Siz esa o'sha xazinani topishingiz kerak. Xonalarni siz 1-eshikdan ochishni boshlaysiz keyin 2-eshik keyin 3-eshik va h.k.z.
+
+Eng ko'pi bilan siz 100ta xonani barchasini ochishingizga to'g'ri keladi. Ko'rib turibsizki omadingiz bo'lsa uni 1tada ham topishingiz mumkin. Agar unday bo'lmasa demak 100ta eshikni ham ochib ko'rasiz. Bir narsani yana eslatib o'taman biz Big O notation bilan faqat **worst case** holatini tahlil qilamiz. Kelin endi kod bilan ko'radigan bo'lsak.
+
+```python
+def summing(numbers : list) -> int:
+    result = 0
+    for num in numbers:
+        result += num
+    return result
+```
+
+Yuqoridagi kodda tasvirlanganidek biz `result` degan o'zgaruvchi ochib uni 0ga tenglashtirdik. Va keyin for loop orqali, funksiyaga beriladigan list qiymatini iteratsiya qilamiz. Iteratsiya har bir raqamni `result` o'zgaruvchisizga increment qilib borayabdi va oxirida esa uni qaytarayabdi. 
+
+Demak bu yerda operatsiyalar soni bevosita funksiyaga beriladigan listning hajmiga bog'liq. Agar listda 23 ta element bo'lsa funksiyamiz 23 operatsiya bajaradi, agar 1 ta bo'lsa 1ta agar `n`ta bo'lsa `n`ta. Biz buni `O(n)` deb o'lchadik!
+
+<br>
+
+### **Quadratic Time - O(n<sup>2</sup>)**
+
+Quadratic - Kvadrat darajali degan ma'noni anglatadi. Tasavvur qiling ishxonada ho'jayiningiz sizga "Xonani 2 marta tekshiring" desa siz 4 marta tekshirasiz, "4 marta tekshiring" desa siz 16 marta tekshirasiz. Mana shu jarayon aynan quadratic deb atasak bo'ladi.
+
+```python
+def numered_num(num : int) -> None:
+    for i in range(num):
+        for j in range(num):
+            print(f"{i}.{j}")
+```
+
+Yuqorida keltirilgan kodda nested-loop tasvirlangan. Biz funksiyaga necha qiymatni bersak u o'sha qiymatni kvadratichalik ko'p operatsiya bajaradi. Agar biz unga 2 ni kiritsak u 4 ta operatsiya qiladi, agar 5 ni kiritsak u 25 ta operatsiya bajaradi. Demak biz uni <code>O(n<sup>2</sup>)</code> 
+
+<br>
 
 <h2 align=center><b>Space Complexities</b></h2>
 
 ### **Constant Space**
 
-### **Constant Space**
+```python
+def summing(nums : list) -> int:
+    result = 0
+    for i in nums:
+        result += i
+    return result
+```
 
-### **Logarithmic Space**
+Yuqorida keltirilgan kodning **space complexity**si `O(1)`. Sababi bizning funksiyamiz 100 ta elementli listga ham 1 000 000 000 elementli listga ham bir xil ishlaydi. Operatsiyalar soni ko'p bo'lgani bilan biz barchasini faqat bitta `result` degan o'zgaruvchiga saqlayabmiz.
+
+```python
+def sum_odds_evens(nums : list) -> str:
+    odds = 0
+    evens = 0
+    for i in nums:
+        if i % 2 == 0:
+            evens += i
+        else:
+            odds += i
+    return f"odds = {odds}, evens = {evens}"
+```
+
+Mana bu kodda ham **Space Complexity** `O(1)`ga teng. Chunki bizda funksiya boshlanishida ham tugashida ham faqat 2ta o'zgaruvchi qolayabdi. Ya'ni funksiyamiz yangi o'zgaruvchilar ochmayabdi, faqat bor o'zgaruvchilarni qiymati o'zgarayabdi. Demak agar funksiyangizdagi o'zgaruvchilar soni oshmasa.
+
+<br>
+
+### **Linear Space**
+
+```python
+def count_frequency(arr : list) -> dict:
+    freq_dict = {}
+    
+    for elem in arr:
+        if elem not in freq_dict:
+            freq_dict[elem] = 0
+            
+        freq_dict[elem] += 1
+        
+    return freq_dict
+```
+
+<br>
 
 ### **Quadratic Space**
 
+```python
+def generate_pairs(arr : list) -> list:
+    pairs = []
+    
+    for i in range(len(arr)):
+        for j in range(len(arr)):
+            pairs.append((arr[i], arr[j]))
+            
+    return pairs
+```
 
+<br>
 
 [Asosiy sahifaga qaytish](../README.md)

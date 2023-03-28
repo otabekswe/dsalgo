@@ -21,7 +21,7 @@ Unday bo'lsa boshladik 🚀!
 <h2 align=center><b>Mavzular</b></h2>
 
 1. [Big O notation](./01.Big%20O%20notation/Doc.md)
-2. [Data Structures](#)
+2. [Data Structures](./02.Data%20Structures/Doc.md)
     - [Arrays](#)
     - [Linked List](#)
     - [Stack and Queue](#)
@@ -31,7 +31,7 @@ Unday bo'lsa boshladik 🚀!
     - [Heap](#)
     - [Hash Table](#)
     - [Hash Table](#)
-3. [Algorithms](#)
+3. [Algorithms](./03.Algorithms/Doc.md)
     - [Algorithmic Paradigms]()
     - [Sorting]()
     - [Searching]()
