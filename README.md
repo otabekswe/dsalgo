@@ -15,12 +15,12 @@ Unday bo'lsa boshladik!
 ## **Mavzular**
 
 1. [Big O notation](./01.Big%20O%20notation/Doc.md)
-2. [Big O notation]()
-3. Tez Kunda!
-4. Tez Kunda!
-5. Tez Kunda!
-6. Tez Kunda!
-7. Tez Kunda!
+2. [Tez Kunda](#)
+3. [Tez Kunda](#)
+4. [Tez Kunda](#)
+5. [Tez Kunda](#)
+6. [Tez Kunda](#)
+7. [Tez Kunda](#)
 
 
 
