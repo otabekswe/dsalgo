@@ -1,3 +1,6 @@
+<div align=center>
+    <img src="./Images/logo.png" width="300px">
+</div>
 <h1 align=center><b>DSA.UZ</b></h1>
 <p align=center style="font-size: 8px; color : #444">"Ma'lumotlar strukturasi va Algoritmlar" mavzusidagi tasavvurga boy va o'zbek tilidagi qo'llanma!</p>
 
