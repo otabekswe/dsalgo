@@ -1,7 +1,8 @@
 <div align=center>
-    <img src="./Images/logo.png" width="300px">
+    <img src="./Images/logo.png" width="25px">
+    <h1 align=center style="display: inline-block"><b>DSA.UZ</b></h1>
 </div>
-<h1 align=center><b>DSA.UZ</b></h1>
+
 <p align=center style="font-size: 8px; color : #444">"Ma'lumotlar strukturasi va Algoritmlar" mavzusidagi tasavvurga boy va o'zbek tilidagi qo'llanma!</p>
 
 <h2 align=center><b>Kirish</b></h2>
