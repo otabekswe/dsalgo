@@ -37,47 +37,6 @@ Qachonki biz algoritmlarni tahlil qilganimizda, qancha kattalikdagi qiymatga <i>
 
 Tasavvur qiling, bizni algoritm berilgan **array**dagi qiymatlardan faqat juft sonlarni yangi arrayga qo'shib, oxirida o'sha **array**ni qaytarishi kerak.
 
-**Python**
-```python
-def juftlar(arry : list[int]) -> list:
-    result = []
-    for num in arry:
-        if num % 2 == 0:
-            result.append(num)
-    return result
-```
-
-**JavaScript**
-```javascript
-function juftlar(arry) {
-    let result = []
-    for (let num of arry) {
-        if (num % 2 == 0) {
-            result.push(num);
-        }
-    }
-    return result;
-}
-```
-
-**Java**
-```java
-import java.util.ArrayList;
-import java.util.List;
-
-public class Juftlar {
-    public static List<Integer> juftlar(List<Integer> arry) {
-        List<Integer> result = new ArrayList<>();
-        for (int num : arry) {
-            if (num % 2 == 0) {
-                result.add(num);
-            }
-        }
-        return result;
-    }
-}
-```
-
 **C**
 ```c
 #include <stdio.h>
@@ -92,61 +51,6 @@ int* juftlar(int arry[], int n, int* result_size) {
         }
     }
     return result;
-}
-```
-
-**C++**
-```cpp
-#include <iostream>
-#include <vector>
-
-std::vector<int> juftlar(std::vector<int> arry) {
-    std::vector<int> result;
-    for (int num : arry) {
-        if (num % 2 == 0) {
-            result.push_back(num);
-        }
-    }
-    return result;
-}
-```
-
-**Rust**
-```rust
-fn juftlar(arry: &[i32]) -> Vec<i32> {
-    let mut result = Vec::new();
-    for &num in arry {
-        if num % 2 == 0 {
-            result.push(num);
-        }
-    }
-    result
-}
-```
-
-**Swift**
-```swift
-func juftlar(_ arry: [Int]) -> [Int] {
-    var result = [Int]()
-    for num in arry {
-        if num % 2 == 0 {
-            result.append(num)
-        }
-    }
-    return result
-}
-```
-
-**Go**
-```go
-func juftlar(arry []int) []int {
-    var result []int
-    for _, num := range arry {
-        if num % 2 == 0 {
-            result = append(result, num)
-        }
-    }
-    return result
 }
 ```
 
