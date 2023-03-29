@@ -37,7 +37,6 @@ Qachonki biz algoritmlarni tahlil qilganimizda, qancha kattalikdagi qiymatga <i>
 
 Tasavvur qiling, bizni algoritm berilgan **array**dagi qiymatlardan faqat juft sonlarni yangi arrayga qo'shib, oxirida o'sha **array**ni qaytarishi kerak.
 
-**Python**
 ```python
 def juftlar(arry : list[int]) -> list:
     result = []
@@ -45,109 +44,6 @@ def juftlar(arry : list[int]) -> list:
         if num % 2 == 0:
             result.append(num)
     return result
-```
-
-**JavaScript**
-```javascript
-function juftlar(arry) {
-    let result = []
-    for (let num of arry) {
-        if (num % 2 == 0) {
-            result.push(num);
-        }
-    }
-    return result;
-}
-```
-
-**Java**
-```java
-import java.util.ArrayList;
-import java.util.List;
-
-public class Juftlar {
-    public static List<Integer> juftlar(List<Integer> arry) {
-        List<Integer> result = new ArrayList<>();
-        for (int num : arry) {
-            if (num % 2 == 0) {
-                result.add(num);
-            }
-        }
-        return result;
-    }
-}
-```
-
-**C**
-```c
-#include <stdio.h>
-
-int* juftlar(int arry[], int n, int* result_size) {
-    int* result = malloc(n * sizeof(int));
-    *result_size = 0;
-    for (int i = 0; i < n; i++) {
-        if (arry[i] % 2 == 0) {
-            result[*result_size] = arry[i];
-            (*result_size)++;
-        }
-    }
-    return result;
-}
-```
-
-**C++**
-```cpp
-#include <iostream>
-#include <vector>
-
-std::vector<int> juftlar(std::vector<int> arry) {
-    std::vector<int> result;
-    for (int num : arry) {
-        if (num % 2 == 0) {
-            result.push_back(num);
-        }
-    }
-    return result;
-}
-```
-
-**Rust**
-```rust
-fn juftlar(arry: &[i32]) -> Vec<i32> {
-    let mut result = Vec::new();
-    for &num in arry {
-        if num % 2 == 0 {
-            result.push(num);
-        }
-    }
-    result
-}
-```
-
-**Swift**
-```swift
-func juftlar(_ arry: [Int]) -> [Int] {
-    var result = [Int]()
-    for num in arry {
-        if num % 2 == 0 {
-            result.append(num)
-        }
-    }
-    return result
-}
-```
-
-**Go**
-```go
-func juftlar(arry []int) []int {
-    var result []int
-    for _, num := range arry {
-        if num % 2 == 0 {
-            result = append(result, num)
-        }
-    }
-    return result
-}
 ```
 
 Yuqorida keltirilgan funksiyani oladigan bo'lsak biz qanchalik kattalikda array bersak u shunchalik ko'p operatsiya bajaradi. Misol uchun `[1, 2, 3, 4, 5]` ni bersak u 5ta sonni ham tekshiadi va ularni ichidan nechtasi juft bo'lsa uni yangi arrayga o'tkazadi. Agar array ichidagi elementlar soni 100ta bo'lsa 100ta operatsiya, `n` ta bo'lsa `n` ta operatsiya sodir qiladi. 
