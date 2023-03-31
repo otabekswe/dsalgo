@@ -89,12 +89,6 @@ Constant - o'zgarmas degan ma'noni anglatadi. Matematikada konstant qiymat nimad
 void* access_element(void** arr, int index) {
     return arr[index];
 }
-
-int main() {
-    int arr[5] = {1, 2, 3, 4, 5};
-    printf("%d\n", *(int*)access_element((void**)arr, 2));
-    return 0;
-}
 ```
 
 Yuqorida keltirilgan kodda bizning `access_element` funksyamizga istalgan kattalikda input bermaylik u bu ishni qilishga bir xil vaqt sarflaydi. Ya'ni operatsiyalar soni bu yerda 1ta. 
@@ -223,7 +217,7 @@ void count_frequency(int arr[], int n) {
 Bu funksiya berilgan list ichida takrorlangan elementlar sonini sanaydi. Keling pastda qiymat berib ko'ramiz va berilgan qiymatga u qanday javob berishini Output orqali ifodalaymiz.
 
 ```c
-count_frequency(["apple", "banana", "apple", "orange", "apple"])
+// Input: ["apple", "banana", "apple", "orange", "apple"]
 
 // Output: {'apple': 3, 'banana': 1, 'orange': 1}
 ```
@@ -252,7 +246,7 @@ void generate_pairs(int arr[], int n) {
 Yuqoridagi funksiya list ichidagi har bir elementni sherik qilib `pairs` degan yangi listga qo'shib boradi.
 
 ```c
-generate_pairs([1, 2, 3])
+// Input: [1, 2, 3]
 
 // Output: [(3, 3), (3, 6), (3, 9), (6, 3), (6, 6), (6, 9), (9, 3), (9, 6), (9, 9)]
 ```
