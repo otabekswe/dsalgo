@@ -91,12 +91,6 @@ public class Main {
     static <T> T access_element(T[] arr, int index) {
         return arr[index];
     }
-
-    public static void main(String[] args) {
-        Integer[] arr = {1, 2, 3, 4, 5};
-        int index = 2;
-        System.out.println(access_element(arr, index));
-    }
 }
 ```
 
@@ -106,11 +100,6 @@ Yuqorida keltirilgan kodda bizning `access_element` funksyamizga istalgan kattal
 public class Main {
     static int sum_of_squares(int n) {
         return (n * (n + 1) * (2 * n + 1)) / 6;
-    }
-
-    public static void main(String[] args) {
-        int n = 5;
-        System.out.println(sum_of_squares(n));
     }
 }
 ```
@@ -136,11 +125,6 @@ public class Main {
         }
         return result;
     }
-
-    public static void main(String[] args) {
-        int[] numbers = {1, 2, 3, 4, 5};
-        System.out.println(summing(numbers));
-    }
 }
 ```
 
@@ -162,11 +146,6 @@ public class Main {
                 System.out.println(i + "." + j);
             }
         }
-    }
-
-    public static void main(String[] args) {
-        int num = 3;
-        numered_num(num);
     }
 }
 ```
@@ -190,11 +169,6 @@ public class Main {
         }
         return result;
     }
-
-    public static void main(String[] args) {
-        int[] nums = {1, 2, 3, 4, 5};
-        System.out.println(summing(nums));
-    }
 }
 ```
 
@@ -215,11 +189,6 @@ public class Main {
             }
         }
         System.out.println("odds = " + odds + ", evens = " + evens);
-    }
-
-    public static void main(String[] args) {
-        int[] nums = {1, 2, 3, 4, 5};
-        sum_odds_evens(nums);
     }
 }
 ```
@@ -247,26 +216,13 @@ public class Main {
         }
         return freq_dict;
     }
-
-    public static void main(String[] args) {
-        int[] arr = {1, 2, 2, 3, 3, 3};
-        Map<Integer, Integer> freq_dict = count_frequency(arr);
-        System.out.print("{ ");
-        for (Map.Entry<Integer, Integer> entry : freq_dict.entrySet()) {
-            System.out.printf("%d: %d", entry.getKey(), entry.getValue());
-            if (!entry.equals(freq_dict.entrySet().toArray()[freq_dict.size() - 1])) {
-                System.out.print(", ");
-            }
-        }
-        System.out.println(" }");
-    }
 }
 ```
 
 Bu funksiya berilgan list ichida takrorlangan elementlar sonini sanaydi. Keling pastda qiymat berib ko'ramiz va berilgan qiymatga u qanday javob berishini Output orqali ifodalaymiz.
 
 ```java
-count_frequency(["apple", "banana", "apple", "orange", "apple"])
+// Input: ["apple", "banana", "apple", "orange", "apple"]
 
 // Output: {'apple': 3, 'banana': 1, 'orange': 1}
 ```
@@ -290,14 +246,6 @@ public class Main {
             }
         }
         return pairs;
-    }
-
-    public static void main(String[] args) {
-        List<Integer> arr = List.of(1, 2, 3);
-        List<Pair<Integer, Integer>> pairs = generate_pairs(arr);
-        for (Pair<Integer, Integer> p : pairs) {
-            System.out.println("(" + p.getFirst() + ", " + p.getSecond() + ")");
-        }
     }
 }
 
@@ -323,7 +271,7 @@ class Pair<F, S> {
 Yuqoridagi funksiya list ichidagi har bir elementni sherik qilib `pairs` degan yangi listga qo'shib boradi.
 
 ```java
-generate_pairs([1, 2, 3])
+// Input: [1, 2, 3]
 
 // Output: [(3, 3), (3, 6), (3, 9), (6, 3), (6, 6), (6, 9), (9, 3), (9, 6), (9, 9)]
 ```
