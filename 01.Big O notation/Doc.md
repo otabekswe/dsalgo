@@ -37,30 +37,6 @@ Qachonki biz algoritmlarni tahlil qilganimizda, qancha kattalikdagi qiymatga <i>
 
 Tasavvur qiling, bizni algoritm berilgan **array**dagi qiymatlardan faqat juft sonlarni yangi arrayga qo'shib, oxirida o'sha **array**ni qaytarishi kerak.
 
-**Python**
-```python
-def juftlar(arry : list[int]) -> list:
-    result = []
-    for num in arry:
-        if num % 2 == 0:
-            result.append(num)
-    return result
-```
-
-**JavaScript**
-```javascript
-function juftlar(arry) {
-    let result = []
-    for (let num of arry) {
-        if (num % 2 == 0) {
-            result.push(num);
-        }
-    }
-    return result;
-}
-```
-
-**Java**
 ```java
 import java.util.ArrayList;
 import java.util.List;
@@ -75,78 +51,6 @@ public class Juftlar {
         }
         return result;
     }
-}
-```
-
-**C**
-```c
-#include <stdio.h>
-
-int* juftlar(int arry[], int n, int* result_size) {
-    int* result = malloc(n * sizeof(int));
-    *result_size = 0;
-    for (int i = 0; i < n; i++) {
-        if (arry[i] % 2 == 0) {
-            result[*result_size] = arry[i];
-            (*result_size)++;
-        }
-    }
-    return result;
-}
-```
-
-**C++**
-```cpp
-#include <iostream>
-#include <vector>
-
-std::vector<int> juftlar(std::vector<int> arry) {
-    std::vector<int> result;
-    for (int num : arry) {
-        if (num % 2 == 0) {
-            result.push_back(num);
-        }
-    }
-    return result;
-}
-```
-
-**Rust**
-```rust
-fn juftlar(arry: &[i32]) -> Vec<i32> {
-    let mut result = Vec::new();
-    for &num in arry {
-        if num % 2 == 0 {
-            result.push(num);
-        }
-    }
-    result
-}
-```
-
-**Swift**
-```swift
-func juftlar(_ arry: [Int]) -> [Int] {
-    var result = [Int]()
-    for num in arry {
-        if num % 2 == 0 {
-            result.append(num)
-        }
-    }
-    return result
-}
-```
-
-**Go**
-```go
-func juftlar(arry []int) []int {
-    var result []int
-    for _, num := range arry {
-        if num % 2 == 0 {
-            result = append(result, num)
-        }
-    }
-    return result
 }
 ```
 
@@ -180,16 +84,35 @@ O'lchov birliklari juda ko'p. Ularni ba'zilarini hozir ushbu qo'llanma davomida 
 
 Constant - o'zgarmas degan ma'noni anglatadi. Matematikada konstant qiymat nimada bor desa men `pi ≈ 3.14159` ni ayta olaman. Biz constant qiymatni Big O da `O(1)` deb o'lchaymiz. Nima uchun aynan 1 soni keltirilganini tushuntirishga menimcha xojat yo'q chunki qiymat **bir**xil qolishi aytilayabdi. Kelin endi misol bilan ko'rsak
 
-```python
-def access_element(arr : list, index : int) -> any:
-    return arr[index]
+```java
+import java.util.Arrays;
+
+public class Main {
+    static <T> T access_element(T[] arr, int index) {
+        return arr[index];
+    }
+
+    public static void main(String[] args) {
+        Integer[] arr = {1, 2, 3, 4, 5};
+        int index = 2;
+        System.out.println(access_element(arr, index));
+    }
+}
 ```
 
 Yuqorida keltirilgan kodda bizning `access_element` funksyamizga istalgan kattalikda input bermaylik u bu ishni qilishga bir xil vaqt sarflaydi. Ya'ni operatsiyalar soni bu yerda 1ta. 
 
-```python
-def sum_of_squares(n : int) -> int:
-    return (n * (n + 1) * (2 * n + 1)) // 6
+```java
+public class Main {
+    static int sum_of_squares(int n) {
+        return (n * (n + 1) * (2 * n + 1)) / 6;
+    }
+
+    public static void main(String[] args) {
+        int n = 5;
+        System.out.println(sum_of_squares(n));
+    }
+}
 ```
 
 Bu ham huddi shunday istalgan xajmdagi qiymat bermaylik operatsiyalar soni oshmaydi ya'ni doim bitta operatsiya amalga oshiradi. Shuning uchun ham uni **worst case**da `O(1)` deb o'lchaymiz. 
@@ -202,12 +125,23 @@ Linear - Chiziqli degan ma'noni anglatadi. Tasavvur qiling oldingizda 100ta xona
 
 Eng ko'pi bilan siz 100ta xonani barchasini ochishingizga to'g'ri keladi. Ko'rib turibsizki omadingiz bo'lsa uni 1tada ham topishingiz mumkin. Agar unday bo'lmasa demak 100ta eshikni ham ochib ko'rasiz. Bir narsani yana eslatib o'taman biz Big O notation bilan faqat **worst case** holatini tahlil qilamiz. Kelin endi kod bilan ko'radigan bo'lsak.
 
-```python
-def summing(numbers : list) -> int:
-    result = 0
-    for num in numbers:
-        result += num
-    return result
+```java
+import java.util.Arrays;
+
+public class Main {
+    static int summing(int[] numbers) {
+        int result = 0;
+        for (int num : numbers) {
+            result += num;
+        }
+        return result;
+    }
+
+    public static void main(String[] args) {
+        int[] numbers = {1, 2, 3, 4, 5};
+        System.out.println(summing(numbers));
+    }
+}
 ```
 
 Yuqoridagi kodda tasvirlanganidek biz `result` degan o'zgaruvchi ochib uni 0ga tenglashtirdik. Va keyin for loop orqali, funksiyaga beriladigan list qiymatini iteratsiya qilamiz. Iteratsiya har bir raqamni `result` o'zgaruvchisizga increment qilib borayabdi va oxirida esa uni qaytarayabdi. 
@@ -220,11 +154,21 @@ Demak bu yerda operatsiyalar soni bevosita funksiyaga beriladigan listning hajmi
 
 Quadratic - Kvadrat darajali degan ma'noni anglatadi. Tasavvur qiling ishxonada ho'jayiningiz sizga "Xonani 2 marta tekshiring" desa siz 4 marta tekshirasiz, "4 marta tekshiring" desa siz 16 marta tekshirasiz. Mana shu jarayon aynan quadratic deb atasak bo'ladi.
 
-```python
-def numered_num(num : int) -> None:
-    for i in range(num):
-        for j in range(num):
-            print(f"{i}.{j}")
+```java
+public class Main {
+    static void numered_num(int num) {
+        for (int i = 0; i < num; i++) {
+            for (int j = 0; j < num; j++) {
+                System.out.println(i + "." + j);
+            }
+        }
+    }
+
+    public static void main(String[] args) {
+        int num = 3;
+        numered_num(num);
+    }
+}
 ```
 
 Yuqorida keltirilgan kodda nested-loop tasvirlangan. Biz funksiyaga necha qiymatni bersak u o'sha qiymatni kvadratichalik ko'p operatsiya bajaradi. Agar biz unga 2 ni kiritsak u 4 ta operatsiya qiladi, agar 5 ni kiritsak u 25 ta operatsiya bajaradi. Demak biz uni <code>O(n<sup>2</sup>)</code> 
@@ -235,26 +179,49 @@ Yuqorida keltirilgan kodda nested-loop tasvirlangan. Biz funksiyaga necha qiymat
 
 ### **Constant Space**
 
-```python
-def summing(nums : list) -> int:
-    result = 0
-    for i in nums:
-        result += i
-    return result
+```java
+import java.util.Arrays;
+
+public class Main {
+    static int summing(int[] nums) {
+        int result = 0;
+        for (int num : nums) {
+            result += num;
+        }
+        return result;
+    }
+
+    public static void main(String[] args) {
+        int[] nums = {1, 2, 3, 4, 5};
+        System.out.println(summing(nums));
+    }
+}
 ```
 
 Yuqorida keltirilgan kodning **space complexity**si `O(1)`. Sababi bizning funksiyamiz 100 ta elementli listga ham 1 000 000 000 elementli listga ham bir xil ishlaydi. Operatsiyalar soni ko'p bo'lgani bilan biz barchasini faqat bitta `result` degan o'zgaruvchiga saqlayabmiz.
 
-```python
-def sum_odds_evens(nums : list) -> str:
-    odds = 0
-    evens = 0
-    for i in nums:
-        if i % 2 == 0:
-            evens += i
-        else:
-            odds += i
-    return f"odds = {odds}, evens = {evens}"
+```java
+import java.util.Arrays;
+
+public class Main {
+    static void sum_odds_evens(int[] nums) {
+        int odds = 0;
+        int evens = 0;
+        for (int num : nums) {
+            if (num % 2 == 0) {
+                evens += num;
+            } else {
+                odds += num;
+            }
+        }
+        System.out.println("odds = " + odds + ", evens = " + evens);
+    }
+
+    public static void main(String[] args) {
+        int[] nums = {1, 2, 3, 4, 5};
+        sum_odds_evens(nums);
+    }
+}
 ```
 
 Mana bu kodda ham **Space Complexity** `O(1)`ga teng. Chunki bizda funksiya boshlanishida ham tugashida ham faqat 2ta o'zgaruvchi qolayabdi. Ya'ni funksiyamiz yangi o'zgaruvchilar ochmayabdi, faqat bor o'zgaruvchilarni qiymati o'zgarayabdi. Demak agar funksiyangizdagi o'zgaruvchilar soni oshmasa.
@@ -263,25 +230,45 @@ Mana bu kodda ham **Space Complexity** `O(1)`ga teng. Chunki bizda funksiya bosh
 
 ### **Linear Space**
 
-```python
-def count_frequency(arr : list) -> dict:
-    freq_dict = {}
-    
-    for elem in arr:
-        if elem not in freq_dict:
-            freq_dict[elem] = 0
-            
-        freq_dict[elem] += 1
-        
-    return freq_dict
+```java
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
+
+public class Main {
+    static Map<Integer, Integer> count_frequency(int[] arr) {
+        Map<Integer, Integer> freq_dict = new HashMap<Integer, Integer>();
+        for (int elem : arr) {
+            if (freq_dict.containsKey(elem)) {
+                freq_dict.put(elem, freq_dict.get(elem) + 1);
+            } else {
+                freq_dict.put(elem, 1);
+            }
+        }
+        return freq_dict;
+    }
+
+    public static void main(String[] args) {
+        int[] arr = {1, 2, 2, 3, 3, 3};
+        Map<Integer, Integer> freq_dict = count_frequency(arr);
+        System.out.print("{ ");
+        for (Map.Entry<Integer, Integer> entry : freq_dict.entrySet()) {
+            System.out.printf("%d: %d", entry.getKey(), entry.getValue());
+            if (!entry.equals(freq_dict.entrySet().toArray()[freq_dict.size() - 1])) {
+                System.out.print(", ");
+            }
+        }
+        System.out.println(" }");
+    }
+}
 ```
 
 Bu funksiya berilgan list ichida takrorlangan elementlar sonini sanaydi. Keling pastda qiymat berib ko'ramiz va berilgan qiymatga u qanday javob berishini Output orqali ifodalaymiz.
 
-```python
+```java
 count_frequency(["apple", "banana", "apple", "orange", "apple"])
 
-# Output: {'apple': 3, 'banana': 1, 'orange': 1}
+// Output: {'apple': 3, 'banana': 1, 'orange': 1}
 ```
 
 Yuqorida ko'rib turganingizdek array ichida takrorlanmaydigan so'zlar bo'lsa **worst case**da bizning funksiyamizni **Space Complexity**si `O(n)` ni tashkil qiladi. Agar omadimiz kelib takrorlanuvchi so'zlar bo'lsa n ta emas 1 ta ham bo'lishi mumkin.
@@ -290,23 +277,55 @@ Yuqorida ko'rib turganingizdek array ichida takrorlanmaydigan so'zlar bo'lsa **w
 
 ### **Quadratic Space**
 
-```python
-def generate_pairs(arr : list) -> list:
-    pairs = []
-    
-    for i in range(len(arr)):
-        for j in range(len(arr)):
-            pairs.append((arr[i], arr[j]))
-            
-    return pairs
+```java
+import java.util.ArrayList;
+import java.util.List;
+
+public class Main {
+    static List<Pair<Integer, Integer>> generate_pairs(List<Integer> arr) {
+        List<Pair<Integer, Integer>> pairs = new ArrayList<Pair<Integer, Integer>>();
+        for (int i = 0; i < arr.size(); i++) {
+            for (int j = 0; j < arr.size(); j++) {
+                pairs.add(new Pair<Integer, Integer>(arr.get(i), arr.get(j)));
+            }
+        }
+        return pairs;
+    }
+
+    public static void main(String[] args) {
+        List<Integer> arr = List.of(1, 2, 3);
+        List<Pair<Integer, Integer>> pairs = generate_pairs(arr);
+        for (Pair<Integer, Integer> p : pairs) {
+            System.out.println("(" + p.getFirst() + ", " + p.getSecond() + ")");
+        }
+    }
+}
+
+class Pair<F, S> {
+    private F first;
+    private S second;
+
+    public Pair(F first, S second) {
+        this.first = first;
+        this.second = second;
+    }
+
+    public F getFirst() {
+        return first;
+    }
+
+    public S getSecond() {
+        return second;
+    }
+}
 ```
 
 Yuqoridagi funksiya list ichidagi har bir elementni sherik qilib `pairs` degan yangi listga qo'shib boradi.
 
-```python
+```java
 generate_pairs([1, 2, 3])
 
-# Output: [(3, 3), (3, 6), (3, 9), (6, 3), (6, 6), (6, 9), (9, 3), (9, 6), (9, 9)]
+// Output: [(3, 3), (3, 6), (3, 9), (6, 3), (6, 6), (6, 9), (9, 3), (9, 6), (9, 9)]
 ```
 
 Ko'rib turibsizki listimiz hajmi qancha kattalashsa qaytariladigan qiymat soni ham uning kvadratiga teng bo'ladi. Yuqoridagi misolda bizning listimizda 3 ta element bor edi ammo funksiya qaytargan yangi list esa 9ta elementdan iborat bo'ldi. Shuning uchun ham biz uni <code>O(n<sup>2</sup>)</code> deb o'lchaymiz.
