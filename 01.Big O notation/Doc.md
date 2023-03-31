@@ -176,7 +176,7 @@ def count_frequency(arr : list) -> dict:
 Bu funksiya berilgan list ichida takrorlangan elementlar sonini sanaydi. Keling pastda qiymat berib ko'ramiz va berilgan qiymatga u qanday javob berishini Output orqali ifodalaymiz.
 
 ```python
-count_frequency(["apple", "banana", "apple", "orange", "apple"])
+# Input: ["apple", "banana", "apple", "orange", "apple"]
 
 # Output: {'apple': 3, 'banana': 1, 'orange': 1}
 ```
@@ -201,7 +201,7 @@ def generate_pairs(arr : list) -> list:
 Yuqoridagi funksiya list ichidagi har bir elementni sherik qilib `pairs` degan yangi listga qo'shib boradi.
 
 ```python
-generate_pairs([1, 2, 3])
+# Input: [1, 2, 3]
 
 # Output: [(3, 3), (3, 6), (3, 9), (6, 3), (6, 6), (6, 9), (9, 3), (9, 6), (9, 9)]
 ```
