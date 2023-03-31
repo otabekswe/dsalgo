@@ -37,7 +37,6 @@ Qachonki biz algoritmlarni tahlil qilganimizda, qancha kattalikdagi qiymatga <i>
 
 Tasavvur qiling, bizni algoritm berilgan **array**dagi qiymatlardan faqat juft sonlarni yangi arrayga qo'shib, oxirida o'sha **array**ni qaytarishi kerak.
 
-**C**
 ```c
 #include <stdio.h>
 
@@ -84,16 +83,28 @@ O'lchov birliklari juda ko'p. Ularni ba'zilarini hozir ushbu qo'llanma davomida 
 
 Constant - o'zgarmas degan ma'noni anglatadi. Matematikada konstant qiymat nimada bor desa men `pi ≈ 3.14159` ni ayta olaman. Biz constant qiymatni Big O da `O(1)` deb o'lchaymiz. Nima uchun aynan 1 soni keltirilganini tushuntirishga menimcha xojat yo'q chunki qiymat **bir**xil qolishi aytilayabdi. Kelin endi misol bilan ko'rsak
 
-```python
-def access_element(arr : list, index : int) -> any:
-    return arr[index]
+```c
+#include <stdio.h>
+
+void* access_element(void** arr, int index) {
+    return arr[index];
+}
+
+int main() {
+    int arr[5] = {1, 2, 3, 4, 5};
+    printf("%d\n", *(int*)access_element((void**)arr, 2));
+    return 0;
+}
 ```
 
 Yuqorida keltirilgan kodda bizning `access_element` funksyamizga istalgan kattalikda input bermaylik u bu ishni qilishga bir xil vaqt sarflaydi. Ya'ni operatsiyalar soni bu yerda 1ta. 
 
-```python
-def sum_of_squares(n : int) -> int:
-    return (n * (n + 1) * (2 * n + 1)) // 6
+```c
+#include <stdio.h>
+
+int access_element(int *arr, int index) {
+    return arr[index];
+}
 ```
 
 Bu ham huddi shunday istalgan xajmdagi qiymat bermaylik operatsiyalar soni oshmaydi ya'ni doim bitta operatsiya amalga oshiradi. Shuning uchun ham uni **worst case**da `O(1)` deb o'lchaymiz. 
@@ -106,12 +117,20 @@ Linear - Chiziqli degan ma'noni anglatadi. Tasavvur qiling oldingizda 100ta xona
 
 Eng ko'pi bilan siz 100ta xonani barchasini ochishingizga to'g'ri keladi. Ko'rib turibsizki omadingiz bo'lsa uni 1tada ham topishingiz mumkin. Agar unday bo'lmasa demak 100ta eshikni ham ochib ko'rasiz. Bir narsani yana eslatib o'taman biz Big O notation bilan faqat **worst case** holatini tahlil qilamiz. Kelin endi kod bilan ko'radigan bo'lsak.
 
-```python
-def summing(numbers : list) -> int:
-    result = 0
-    for num in numbers:
-        result += num
-    return result
+```c
+#include <stdio.h>
+
+int* juftlar(int arry[], int n, int* result_size) {
+    int* result = malloc(n * sizeof(int));
+    *result_size = 0;
+    for (int i = 0; i < n; i++) {
+        if (arry[i] % 2 == 0) {
+            result[*result_size] = arry[i];
+            (*result_size)++;
+        }
+    }
+    return result;
+}
 ```
 
 Yuqoridagi kodda tasvirlanganidek biz `result` degan o'zgaruvchi ochib uni 0ga tenglashtirdik. Va keyin for loop orqali, funksiyaga beriladigan list qiymatini iteratsiya qilamiz. Iteratsiya har bir raqamni `result` o'zgaruvchisizga increment qilib borayabdi va oxirida esa uni qaytarayabdi. 
@@ -124,11 +143,16 @@ Demak bu yerda operatsiyalar soni bevosita funksiyaga beriladigan listning hajmi
 
 Quadratic - Kvadrat darajali degan ma'noni anglatadi. Tasavvur qiling ishxonada ho'jayiningiz sizga "Xonani 2 marta tekshiring" desa siz 4 marta tekshirasiz, "4 marta tekshiring" desa siz 16 marta tekshirasiz. Mana shu jarayon aynan quadratic deb atasak bo'ladi.
 
-```python
-def numered_num(num : int) -> None:
-    for i in range(num):
-        for j in range(num):
-            print(f"{i}.{j}")
+```c
+#include <stdio.h>
+
+void numered_num(int num) {
+    for (int i = 0; i < num; i++) {
+        for (int j = 0; j < num; j++) {
+            printf("%d.%d\n", i, j);
+        }
+    }
+}
 ```
 
 Yuqorida keltirilgan kodda nested-loop tasvirlangan. Biz funksiyaga necha qiymatni bersak u o'sha qiymatni kvadratichalik ko'p operatsiya bajaradi. Agar biz unga 2 ni kiritsak u 4 ta operatsiya qiladi, agar 5 ni kiritsak u 25 ta operatsiya bajaradi. Demak biz uni <code>O(n<sup>2</sup>)</code> 
@@ -139,26 +163,35 @@ Yuqorida keltirilgan kodda nested-loop tasvirlangan. Biz funksiyaga necha qiymat
 
 ### **Constant Space**
 
-```python
-def summing(nums : list) -> int:
-    result = 0
-    for i in nums:
-        result += i
-    return result
+```c
+#include <stdio.h>
+
+int summing(int numbers[], int n) {
+    int result = 0;
+    for (int i = 0; i < n; i++) {
+        result += numbers[i];
+    }
+    return result;
+}
 ```
 
 Yuqorida keltirilgan kodning **space complexity**si `O(1)`. Sababi bizning funksiyamiz 100 ta elementli listga ham 1 000 000 000 elementli listga ham bir xil ishlaydi. Operatsiyalar soni ko'p bo'lgani bilan biz barchasini faqat bitta `result` degan o'zgaruvchiga saqlayabmiz.
 
-```python
-def sum_odds_evens(nums : list) -> str:
-    odds = 0
-    evens = 0
-    for i in nums:
-        if i % 2 == 0:
-            evens += i
-        else:
-            odds += i
-    return f"odds = {odds}, evens = {evens}"
+```c
+#include <stdio.h>
+
+void sum_odds_evens(int nums[], int n) {
+    int odds = 0;
+    int evens = 0;
+    for (int i = 0; i < n; i++) {
+        if (nums[i] % 2 == 0) {
+            evens += nums[i];
+        } else {
+            odds += nums[i];
+        }
+    }
+    printf("odds = %d, evens = %d", odds, evens);
+}
 ```
 
 Mana bu kodda ham **Space Complexity** `O(1)`ga teng. Chunki bizda funksiya boshlanishida ham tugashida ham faqat 2ta o'zgaruvchi qolayabdi. Ya'ni funksiyamiz yangi o'zgaruvchilar ochmayabdi, faqat bor o'zgaruvchilarni qiymati o'zgarayabdi. Demak agar funksiyangizdagi o'zgaruvchilar soni oshmasa.
@@ -167,25 +200,32 @@ Mana bu kodda ham **Space Complexity** `O(1)`ga teng. Chunki bizda funksiya bosh
 
 ### **Linear Space**
 
-```python
-def count_frequency(arr : list) -> dict:
-    freq_dict = {}
-    
-    for elem in arr:
-        if elem not in freq_dict:
-            freq_dict[elem] = 0
-            
-        freq_dict[elem] += 1
-        
-    return freq_dict
+```c
+#include <stdio.h>
+#include <stdlib.h>
+
+void count_frequency(int arr[], int n) {
+    int* freq_dict = (int*) calloc(n, sizeof(int));
+    for (int i = 0; i < n; i++) {
+        freq_dict[arr[i]]++;
+    }
+    printf("{ ");
+    for (int i = 0; i < n; i++) {
+        if (freq_dict[i] > 0) {
+            printf("%d:%d, ", i, freq_dict[i]);
+        }
+    }
+    printf("}");
+    free(freq_dict);
+}
 ```
 
 Bu funksiya berilgan list ichida takrorlangan elementlar sonini sanaydi. Keling pastda qiymat berib ko'ramiz va berilgan qiymatga u qanday javob berishini Output orqali ifodalaymiz.
 
-```python
+```c
 count_frequency(["apple", "banana", "apple", "orange", "apple"])
 
-# Output: {'apple': 3, 'banana': 1, 'orange': 1}
+// Output: {'apple': 3, 'banana': 1, 'orange': 1}
 ```
 
 Yuqorida ko'rib turganingizdek array ichida takrorlanmaydigan so'zlar bo'lsa **worst case**da bizning funksiyamizni **Space Complexity**si `O(n)` ni tashkil qiladi. Agar omadimiz kelib takrorlanuvchi so'zlar bo'lsa n ta emas 1 ta ham bo'lishi mumkin.
@@ -194,23 +234,27 @@ Yuqorida ko'rib turganingizdek array ichida takrorlanmaydigan so'zlar bo'lsa **w
 
 ### **Quadratic Space**
 
-```python
-def generate_pairs(arr : list) -> list:
-    pairs = []
-    
-    for i in range(len(arr)):
-        for j in range(len(arr)):
-            pairs.append((arr[i], arr[j]))
-            
-    return pairs
+```c
+#include <stdio.h>
+#include <stdlib.h>
+
+void generate_pairs(int arr[], int n) {
+    printf("[ ");
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < n; j++) {
+            printf("(%d, %d), ", arr[i], arr[j]);
+        }
+    }
+    printf("]");
+}
 ```
 
 Yuqoridagi funksiya list ichidagi har bir elementni sherik qilib `pairs` degan yangi listga qo'shib boradi.
 
-```python
+```c
 generate_pairs([1, 2, 3])
 
-# Output: [(3, 3), (3, 6), (3, 9), (6, 3), (6, 6), (6, 9), (9, 3), (9, 6), (9, 9)]
+// Output: [(3, 3), (3, 6), (3, 9), (6, 3), (6, 6), (6, 9), (9, 3), (9, 6), (9, 9)]
 ```
 
 Ko'rib turibsizki listimiz hajmi qancha kattalashsa qaytariladigan qiymat soni ham uning kvadratiga teng bo'ladi. Yuqoridagi misolda bizning listimizda 3 ta element bor edi ammo funksiya qaytargan yangi list esa 9ta elementdan iborat bo'ldi. Shuning uchun ham biz uni <code>O(n<sup>2</sup>)</code> deb o'lchaymiz.
