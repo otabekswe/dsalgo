@@ -37,13 +37,16 @@ Qachonki biz algoritmlarni tahlil qilganimizda, qancha kattalikdagi qiymatga <i>
 
 Tasavvur qiling, bizni algoritm berilgan **array**dagi qiymatlardan faqat juft sonlarni yangi arrayga qo'shib, oxirida o'sha **array**ni qaytarishi kerak.
 
-```python
-def juftlar(arry : list[int]) -> list:
-    result = []
-    for num in arry:
-        if num % 2 == 0:
-            result.append(num)
-    return result
+```javascript
+function juftlar(arry) {
+    let result = [];
+    for (let num of arry) {
+        if (num % 2 === 0) {
+            result.push(num);
+        }
+    }
+    return result;
+}
 ```
 
 Yuqorida keltirilgan funksiyani oladigan bo'lsak biz qanchalik kattalikda array bersak u shunchalik ko'p operatsiya bajaradi. Misol uchun `[1, 2, 3, 4, 5]` ni bersak u 5ta sonni ham tekshiadi va ularni ichidan nechtasi juft bo'lsa uni yangi arrayga o'tkazadi. Agar array ichidagi elementlar soni 100ta bo'lsa 100ta operatsiya, `n` ta bo'lsa `n` ta operatsiya sodir qiladi. 
@@ -76,16 +79,18 @@ O'lchov birliklari juda ko'p. Ularni ba'zilarini hozir ushbu qo'llanma davomida 
 
 Constant - o'zgarmas degan ma'noni anglatadi. Matematikada konstant qiymat nimada bor desa men `pi ≈ 3.14159` ni ayta olaman. Biz constant qiymatni Big O da `O(1)` deb o'lchaymiz. Nima uchun aynan 1 soni keltirilganini tushuntirishga menimcha xojat yo'q chunki qiymat **bir**xil qolishi aytilayabdi. Kelin endi misol bilan ko'rsak
 
-```python
-def access_element(arr : list, index : int) -> any:
-    return arr[index]
+```javascript
+function access_element(arr, index) {
+    return arr[index];
+}
 ```
 
 Yuqorida keltirilgan kodda bizning `access_element` funksyamizga istalgan kattalikda input bermaylik u bu ishni qilishga bir xil vaqt sarflaydi. Ya'ni operatsiyalar soni bu yerda 1ta. 
 
-```python
-def sum_of_squares(n : int) -> int:
-    return (n * (n + 1) * (2 * n + 1)) // 6
+```javascript
+function sum_of_squares(n) {
+    return (n * (n + 1) * (2 * n + 1)) / 6;
+}
 ```
 
 Bu ham huddi shunday istalgan xajmdagi qiymat bermaylik operatsiyalar soni oshmaydi ya'ni doim bitta operatsiya amalga oshiradi. Shuning uchun ham uni **worst case**da `O(1)` deb o'lchaymiz. 
@@ -98,12 +103,14 @@ Linear - Chiziqli degan ma'noni anglatadi. Tasavvur qiling oldingizda 100ta xona
 
 Eng ko'pi bilan siz 100ta xonani barchasini ochishingizga to'g'ri keladi. Ko'rib turibsizki omadingiz bo'lsa uni 1tada ham topishingiz mumkin. Agar unday bo'lmasa demak 100ta eshikni ham ochib ko'rasiz. Bir narsani yana eslatib o'taman biz Big O notation bilan faqat **worst case** holatini tahlil qilamiz. Kelin endi kod bilan ko'radigan bo'lsak.
 
-```python
-def summing(numbers : list) -> int:
-    result = 0
-    for num in numbers:
-        result += num
-    return result
+```javascript
+function summing(numbers) {
+    let result = 0;
+    for (let num of numbers) {
+        result += num;
+    }
+    return result;
+}
 ```
 
 Yuqoridagi kodda tasvirlanganidek biz `result` degan o'zgaruvchi ochib uni 0ga tenglashtirdik. Va keyin for loop orqali, funksiyaga beriladigan list qiymatini iteratsiya qilamiz. Iteratsiya har bir raqamni `result` o'zgaruvchisizga increment qilib borayabdi va oxirida esa uni qaytarayabdi. 
@@ -116,11 +123,14 @@ Demak bu yerda operatsiyalar soni bevosita funksiyaga beriladigan listning hajmi
 
 Quadratic - Kvadrat darajali degan ma'noni anglatadi. Tasavvur qiling ishxonada ho'jayiningiz sizga "Xonani 2 marta tekshiring" desa siz 4 marta tekshirasiz, "4 marta tekshiring" desa siz 16 marta tekshirasiz. Mana shu jarayon aynan quadratic deb atasak bo'ladi.
 
-```python
-def numered_num(num : int) -> None:
-    for i in range(num):
-        for j in range(num):
-            print(f"{i}.{j}")
+```javascript
+function numered_num(num) {
+    for (let i = 0; i < num; i++) {
+        for (let j = 0; j < num; j++) {
+            console.log(`${i}.${j}`);
+        }
+    }
+}
 ```
 
 Yuqorida keltirilgan kodda nested-loop tasvirlangan. Biz funksiyaga necha qiymatni bersak u o'sha qiymatni kvadratichalik ko'p operatsiya bajaradi. Agar biz unga 2 ni kiritsak u 4 ta operatsiya qiladi, agar 5 ni kiritsak u 25 ta operatsiya bajaradi. Demak biz uni <code>O(n<sup>2</sup>)</code> 
@@ -131,26 +141,30 @@ Yuqorida keltirilgan kodda nested-loop tasvirlangan. Biz funksiyaga necha qiymat
 
 ### **Constant Space**
 
-```python
-def summing(nums : list) -> int:
-    result = 0
-    for i in nums:
-        result += i
-    return result
+```javascript
+function summing(nums) {
+    let result = 0;
+    for (let num of nums) {
+        result += num;
+    }
+    return result;
+}
 ```
 
 Yuqorida keltirilgan kodning **space complexity**si `O(1)`. Sababi bizning funksiyamiz 100 ta elementli listga ham 1 000 000 000 elementli listga ham bir xil ishlaydi. Operatsiyalar soni ko'p bo'lgani bilan biz barchasini faqat bitta `result` degan o'zgaruvchiga saqlayabmiz.
 
-```python
-def sum_odds_evens(nums : list) -> str:
-    odds = 0
-    evens = 0
-    for i in nums:
-        if i % 2 == 0:
-            evens += i
-        else:
-            odds += i
-    return f"odds = {odds}, evens = {evens}"
+```javascript
+function sum_odds_evens(nums) {
+    let odds = 0, evens = 0;
+    for (let num of nums) {
+        if (num % 2 === 0) {
+            evens += num;
+        } else {
+            odds += num;
+        }
+    }
+    return `odds = ${odds}, evens = ${evens}`;
+}
 ```
 
 Mana bu kodda ham **Space Complexity** `O(1)`ga teng. Chunki bizda funksiya boshlanishida ham tugashida ham faqat 2ta o'zgaruvchi qolayabdi. Ya'ni funksiyamiz yangi o'zgaruvchilar ochmayabdi, faqat bor o'zgaruvchilarni qiymati o'zgarayabdi. Demak agar funksiyangizdagi o'zgaruvchilar soni oshmasa.
@@ -159,25 +173,26 @@ Mana bu kodda ham **Space Complexity** `O(1)`ga teng. Chunki bizda funksiya bosh
 
 ### **Linear Space**
 
-```python
-def count_frequency(arr : list) -> dict:
-    freq_dict = {}
-    
-    for elem in arr:
-        if elem not in freq_dict:
-            freq_dict[elem] = 0
-            
-        freq_dict[elem] += 1
-        
-    return freq_dict
+```javascript
+function count_frequency(arr) {
+    let freq_dict = {};
+    for (let elem of arr) {
+        if (elem in freq_dict) {
+            freq_dict[elem]++;
+        } else {
+            freq_dict[elem] = 1;
+        }
+    }
+    return freq_dict;
+}
 ```
 
 Bu funksiya berilgan list ichida takrorlangan elementlar sonini sanaydi. Keling pastda qiymat berib ko'ramiz va berilgan qiymatga u qanday javob berishini Output orqali ifodalaymiz.
 
-```python
-count_frequency(["apple", "banana", "apple", "orange", "apple"])
+```javascript
+// Input: ["apple", "banana", "apple", "orange", "apple"]
 
-# Output: {'apple': 3, 'banana': 1, 'orange': 1}
+// Output: {'apple': 3, 'banana': 1, 'orange': 1}
 ```
 
 Yuqorida ko'rib turganingizdek array ichida takrorlanmaydigan so'zlar bo'lsa **worst case**da bizning funksiyamizni **Space Complexity**si `O(n)` ni tashkil qiladi. Agar omadimiz kelib takrorlanuvchi so'zlar bo'lsa n ta emas 1 ta ham bo'lishi mumkin.
@@ -186,23 +201,24 @@ Yuqorida ko'rib turganingizdek array ichida takrorlanmaydigan so'zlar bo'lsa **w
 
 ### **Quadratic Space**
 
-```python
-def generate_pairs(arr : list) -> list:
-    pairs = []
-    
-    for i in range(len(arr)):
-        for j in range(len(arr)):
-            pairs.append((arr[i], arr[j]))
-            
-    return pairs
+```javascript
+function generate_pairs(arr) {
+    let pairs = [];
+    for (let i of arr) {
+        for (let j of arr) {
+            pairs.push([i, j]);
+        }
+    }
+    return pairs;
+}
 ```
 
 Yuqoridagi funksiya list ichidagi har bir elementni sherik qilib `pairs` degan yangi listga qo'shib boradi.
 
-```python
-generate_pairs([1, 2, 3])
+```javascript
+// Input: [1, 2, 3]
 
-# Output: [(3, 3), (3, 6), (3, 9), (6, 3), (6, 6), (6, 9), (9, 3), (9, 6), (9, 9)]
+// Output: [(3, 3), (3, 6), (3, 9), (6, 3), (6, 6), (6, 9), (9, 3), (9, 6), (9, 9)]
 ```
 
 Ko'rib turibsizki listimiz hajmi qancha kattalashsa qaytariladigan qiymat soni ham uning kvadratiga teng bo'ladi. Yuqoridagi misolda bizning listimizda 3 ta element bor edi ammo funksiya qaytargan yangi list esa 9ta elementdan iborat bo'ldi. Shuning uchun ham biz uni <code>O(n<sup>2</sup>)</code> deb o'lchaymiz.
