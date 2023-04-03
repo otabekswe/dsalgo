@@ -19,7 +19,7 @@ Big O notation Algoritmlarni tezligini o'lchash uchun ishlatiladigan asbob deb o
 
 > **Big O notation**ni tushunish uchun Matematikaga biroz murojaat qilamiz. Chunki Dasturlashda Matematikani o'rni juda muhim!
 
-Matematikada funkisya degan tushuncha mavjud. Biz uni mana bu ko'rinishda ifodalashimiz mumkin.
+Matematikada funksiya degan tushuncha mavjud. Biz uni mana bu ko'rinishda ifodalashimiz mumkin.
 
 `
 f(x) = x + 2
