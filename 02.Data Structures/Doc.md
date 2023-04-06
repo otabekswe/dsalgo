@@ -39,4 +39,4 @@ Biz sizga quyida ketma-ket sayohat qilishingiz uchun manzillar tuzib qo'yganmiz.
 
 Agarda siz ushbu ro'yxatda keltirilgan barcha Data Structurelarni bilsangiz, sizni Algorithmlar mavzusidagi ajoyib qo'llanma kutib turibdi. Olg'a!
 
-<pre align=center><a href="./array.md">➡️ Keyingi darsga o'tish</a>     <a href="../01.Big%20O%20notation/Doc.md">⬅️ Ortga qaytish</a> </pre>
+<pre align=center><a href="../01.Big%20O%20notation/Doc.md">⬅️ Ortga qaytish</a>     <a href="./array.md">➡️ Keyingi darsga o'tish</a></pre>

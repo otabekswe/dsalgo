@@ -186,6 +186,6 @@ Ikkalasi o'rtasidagi farqlar asosan yuqorida aytib o'tilgan backend ilovasi tufa
 2. [Find two number that sums up to K](https://www.google.com/search?q=Find+two+number+that+up+to+k&oq=Find+two+number+that+up+to+k&aqs=chrome..69i57.6405j0j9&sourceid=chrome&ie=UTF-8)
 
 
-<pre align=center> <a href="./Doc.md">⬅️ Ortga qaytish</a>     <a href="./Linked%20List.md">➡️ Keyingi darsga o'tish</a>    </pre>
+<pre align=center> <a href="./Doc.md">⬅️ Ortga qaytish</a>     <a href="./Linked%20List.md">➡️ Keyingi darsga o'tish</a></pre>
 
 <!-- <img src="../Images/" alt="List vs Array"> -->
