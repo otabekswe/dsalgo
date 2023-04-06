@@ -212,6 +212,6 @@ Ko'rib turibsizki listimiz hajmi qancha kattalashsa qaytariladigan qiymat soni h
 
 Yana bir necha misolla keltirishimiz mumkin ammo qolganini sayohatimiz davomida o'rganib ketamiz. Hozircha shular edi.
 
-[➡️ Keyingi darsga o'tish](#)
+[➡️ Keyingi darsga o'tish](/02.Data%20Structures/Doc.md)
 
 [⬅️ Asosiy sahifaga qaytish](../README.md) 
