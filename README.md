@@ -37,7 +37,7 @@ Ushbu dokumentatsiyada **Java** dasturlash tili ishlatilgan. Siz o'zingizga qula
 
 1. [Big O notation](./01.Big%20O%20notation/Doc.md)
 2. [Data Structures](./02.Data%20Structures/Doc.md)
-    - [Arrays](#)
+    - [Arrays](./02.Data%20Structures/array.md)
     - [Linked List](#)
     - [Stack and Queue](#)
     - [Graph](#)
