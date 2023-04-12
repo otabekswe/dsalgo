@@ -218,7 +218,7 @@ Yuqoridagi funksiya list ichidagi har bir elementni sherik qilib `pairs` degan y
 ```javascript
 // Input: [1, 2, 3]
 
-// Output: [(3, 3), (3, 6), (3, 9), (6, 3), (6, 6), (6, 9), (9, 3), (9, 6), (9, 9)]
+// Output: [(1, 1), (1, 2), (1, 3), (2, 1), (2, 2), (2, 3), 3, 1), (3, 2), (3, 3)]
 ```
 
 Ko'rib turibsizki listimiz hajmi qancha kattalashsa qaytariladigan qiymat soni ham uning kvadratiga teng bo'ladi. Yuqoridagi misolda bizning listimizda 3 ta element bor edi ammo funksiya qaytargan yangi list esa 9ta elementdan iborat bo'ldi. Shuning uchun ham biz uni <code>O(n<sup>2</sup>)</code> deb o'lchaymiz.
