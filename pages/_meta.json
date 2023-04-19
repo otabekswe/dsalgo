@@ -1,0 +1,42 @@
+{
+  "index": {
+    "title": "Kirish",
+    "theme": {
+      "breadcrumb": false,
+      "footer": true,
+      "sidebar": true,
+      "toc": true,
+      "pagination": true
+    }
+  },
+  "bigo": "Big O notation",
+  "datastructure": "Ma'lumotlar Strukturasi",
+  "algorithms": "Algoritmlar",
+  "about": "Biz haqimizda!",
+  "---": {
+    "type": "separator"
+  },
+  "buycoffee": {
+    "title": "Buy me a coffee",
+    "type": "page",
+    "href": "https://payme.uz/@otabek_nurmatov",
+    "newWindow": true
+  },
+  "contact": {
+    "title": "Savollar ✉️",
+    "type": "page",
+    "href": "https://t.me/otabekfeedbackbot",
+    "newWindow": true
+  },
+  "Languages": {
+    "title": "Tillar",
+    "type": "menu",
+    "items": {
+      "py": {
+        "title": "Python"
+      }
+    }
+  }
+}
+
+
