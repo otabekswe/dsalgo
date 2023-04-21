@@ -17,11 +17,11 @@
     "title": "Tillar",
     "type": "menu",
     "items": {
-      "python": {
-        "title": "Python"
-      },
       "java": {
         "title": "Java"
+      },
+      "python": {
+        "title": "Python"
       },
       "cpp": {
         "title": "C++"
