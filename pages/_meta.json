@@ -28,12 +28,33 @@
     "href": "https://t.me/otabekfeedbackbot",
     "newWindow": true
   },
-  "Languages": {
+  "languages": {
     "title": "Tillar",
     "type": "menu",
     "items": {
-      "py": {
+      "python": {
         "title": "Python"
+      },
+      "java": {
+        "title": "Java"
+      },
+      "cpp": {
+        "title": "C++"
+      },
+      "go": {
+        "title": "Go"
+      },
+      "rust": {
+        "title": "Rust"
+      },
+      "javascript": {
+        "title": "JavaScript"
+      },
+      "swift": {
+        "title": "Swift"
+      },
+      "c": {
+        "title": "C"
       }
     }
   }
