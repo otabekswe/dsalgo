@@ -2,13 +2,6 @@
   "/_app": "pages/_app.js",
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
-  "/languages/javascript": "pages/languages/javascript.js",
-  "/languages/rust": "pages/languages/rust.js",
-  "/languages/java": "pages/languages/java.js",
-  "/languages/c": "pages/languages/c.js",
-  "/languages/swift": "pages/languages/swift.js",
-  "/languages/go": "pages/languages/go.js",
   "/": "pages/index.js",
-  "/bigo": "pages/bigo.js",
-  "/languages/cpp": "pages/languages/cpp.js"
+  "/about": "pages/about.js"
 }

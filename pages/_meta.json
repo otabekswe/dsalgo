@@ -13,21 +13,6 @@
   "datastructure": "Ma'lumotlar Strukturasi",
   "algorithms": "Algoritmlar",
   "about": "Biz haqimizda!",
-  "---": {
-    "type": "separator"
-  },
-  "buycoffee": {
-    "title": "Buy me a coffee",
-    "type": "page",
-    "href": "https://payme.uz/@otabek_nurmatov",
-    "newWindow": true
-  },
-  "contact": {
-    "title": "Savollar ✉️",
-    "type": "page",
-    "href": "https://t.me/otabekfeedbackbot",
-    "newWindow": true
-  },
   "languages": {
     "title": "Tillar",
     "type": "menu",
@@ -57,5 +42,20 @@
         "title": "C"
       }
     }
+  },
+  "---": {
+    "type": "separator"
+  },
+  "buycoffee": {
+    "title": "Buy me a coffee",
+    "type": "page",
+    "href": "https://payme.uz/@otabek_nurmatov",
+    "newWindow": true
+  },
+  "contact": {
+    "title": "Savollar ✉️",
+    "type": "page",
+    "href": "https://t.me/otabekfeedbackbot",
+    "newWindow": true
   }
 }

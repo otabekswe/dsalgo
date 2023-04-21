@@ -30,45 +30,10 @@
       "static/chunks/main.js",
       "static/chunks/pages/_error.js"
     ],
-    "/bigo": [
+    "/about": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",
-      "static/chunks/pages/bigo.js"
-    ],
-    "/languages/c": [
-      "static/chunks/webpack.js",
-      "static/chunks/main.js",
-      "static/chunks/pages/languages/c.js"
-    ],
-    "/languages/cpp": [
-      "static/chunks/webpack.js",
-      "static/chunks/main.js",
-      "static/chunks/pages/languages/cpp.js"
-    ],
-    "/languages/go": [
-      "static/chunks/webpack.js",
-      "static/chunks/main.js",
-      "static/chunks/pages/languages/go.js"
-    ],
-    "/languages/java": [
-      "static/chunks/webpack.js",
-      "static/chunks/main.js",
-      "static/chunks/pages/languages/java.js"
-    ],
-    "/languages/javascript": [
-      "static/chunks/webpack.js",
-      "static/chunks/main.js",
-      "static/chunks/pages/languages/javascript.js"
-    ],
-    "/languages/rust": [
-      "static/chunks/webpack.js",
-      "static/chunks/main.js",
-      "static/chunks/pages/languages/rust.js"
-    ],
-    "/languages/swift": [
-      "static/chunks/webpack.js",
-      "static/chunks/main.js",
-      "static/chunks/pages/languages/swift.js"
+      "static/chunks/pages/about.js"
     ]
   },
   "ampFirstPages": []
