@@ -1,0 +1,96 @@
+```python showLineNumbers
+def juftlar(arry : list[int]) -> list:
+    result = []
+    for num in arry:
+        if num % 2 == 0:
+            result.append(num)
+    return result
+```
+
+```python showLineNumbers
+def access_element(arr : list, index : int) -> any:
+    return arr[index]
+```
+
+```python showLineNumbers
+def sum_of_squares(n : int) -> int:
+    return (n * (n + 1) * (2 * n + 1)) // 6
+```
+
+
+```python showLineNumbers
+def summing(numbers : list) -> int:
+    result = 0
+    for num in numbers:
+        result += num
+    return result
+```
+
+
+```python showLineNumbers
+def numered_num(num : int) -> None:
+    for i in range(num):
+        for j in range(num):
+            print(f"{i}.{j}")
+```
+
+
+```python showLineNumbers
+def summing(nums : list) -> int:
+    result = 0
+    for i in nums:
+        result += i
+    return result
+```
+
+```python showLineNumbers
+def sum_odds_evens(nums : list) -> str:
+    odds = 0
+    evens = 0
+    for i in nums:
+        if i % 2 == 0:
+            evens += i
+        else:
+            odds += i
+    return f"odds = {odds}, evens = {evens}"
+```
+
+
+```python showLineNumbers
+def count_frequency(arr : list) -> dict:
+    freq_dict = {}
+    
+    for elem in arr:
+        if elem not in freq_dict:
+            freq_dict[elem] = 0
+            
+        freq_dict[elem] += 1
+        
+    return freq_dict
+```
+
+```python showLineNumbers
+# Input: ["apple", "banana", "apple", "orange", "apple"]
+
+# Output: {'apple': 3, 'banana': 1, 'orange': 1}
+```
+
+
+```python showLineNumbers
+def generate_pairs(arr : list) -> list:
+    pairs = []
+    
+    for i in range(len(arr)):
+        for j in range(len(arr)):
+            pairs.append((arr[i], arr[j]))
+            
+    return pairs
+```
+
+
+
+```python showLineNumbers
+# Input: [1, 2, 3]
+
+# Output: [(3, 3), (3, 6), (3, 9), (6, 3), (6, 6), (6, 9), (9, 3), (9, 6), (9, 9)]
+```

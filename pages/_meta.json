@@ -16,29 +16,30 @@
   "languages": {
     "title": "Tillar",
     "type": "menu",
+    "hidden": true,
     "items": {
-      "java": {
+      "Java": {
         "title": "Java"
       },
-      "python": {
+      "Python": {
         "title": "Python"
       },
-      "cpp": {
-        "title": "C++"
-      },
-      "go": {
-        "title": "Go"
-      },
-      "rust": {
-        "title": "Rust"
-      },
-      "javascript": {
+      "Javascript": {
         "title": "JavaScript"
       },
-      "swift": {
+      "C++": {
+        "title": "C++"
+      },
+      "Go": {
+        "title": "Go"
+      },
+      "Rust": {
+        "title": "Rust"
+      },
+      "Swift": {
         "title": "Swift"
       },
-      "c": {
+      "C": {
         "title": "C"
       }
     }
