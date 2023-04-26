@@ -25,10 +25,15 @@
       "static/chunks/main.js",
       "static/chunks/pages/_error.js"
     ],
-    "/bigo": [
+    "/datastructure/array": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",
-      "static/chunks/pages/bigo.js"
+      "static/chunks/pages/datastructure/array.js"
+    ],
+    "/datastructure/linkedlist": [
+      "static/chunks/webpack.js",
+      "static/chunks/main.js",
+      "static/chunks/pages/datastructure/linkedlist.js"
     ]
   },
   "ampFirstPages": []
