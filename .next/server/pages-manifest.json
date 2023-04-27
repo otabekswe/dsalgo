@@ -2,6 +2,11 @@
   "/_app": "pages/_app.js",
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
+  "/datastructure/stack": "pages/datastructure/stack.js",
   "/datastructure/linkedlist": "pages/datastructure/linkedlist.js",
-  "/datastructure/array": "pages/datastructure/array.js"
+  "/datastructure/graph": "pages/datastructure/graph.js",
+  "/datastructure/tree": "pages/datastructure/tree.js",
+  "/datastructure/trie": "pages/datastructure/trie.js",
+  "/datastructure/queue": "pages/datastructure/queue.js",
+  "/datastructure/hashtable": "pages/datastructure/hashtable.js"
 }
