@@ -18,28 +18,28 @@
     "type": "menu",
     "hidden": true,
     "items": {
-      "Java": {
+      "java": {
         "title": "Java"
       },
-      "Python": {
+      "python": {
         "title": "Python"
       },
-      "Javascript": {
+      "javascript": {
         "title": "JavaScript"
       },
-      "C++": {
+      "c++": {
         "title": "C++"
       },
-      "Go": {
+      "go": {
         "title": "Go"
       },
-      "Rust": {
+      "rust": {
         "title": "Rust"
       },
-      "Swift": {
+      "swift": {
         "title": "Swift"
       },
-      "C": {
+      "c": {
         "title": "C"
       }
     }
