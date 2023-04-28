@@ -25,40 +25,45 @@
       "static/chunks/main.js",
       "static/chunks/pages/_error.js"
     ],
-    "/datastructure/graph": [
+    "/languages/C": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",
-      "static/chunks/pages/datastructure/graph.js"
+      "static/chunks/pages/languages/C.js"
     ],
-    "/datastructure/hashtable": [
+    "/languages/C++": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",
-      "static/chunks/pages/datastructure/hashtable.js"
+      "static/chunks/pages/languages/C++.js"
     ],
-    "/datastructure/linkedlist": [
+    "/languages/Go": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",
-      "static/chunks/pages/datastructure/linkedlist.js"
+      "static/chunks/pages/languages/Go.js"
     ],
-    "/datastructure/queue": [
+    "/languages/Java": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",
-      "static/chunks/pages/datastructure/queue.js"
+      "static/chunks/pages/languages/Java.js"
     ],
-    "/datastructure/stack": [
+    "/languages/Javascript": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",
-      "static/chunks/pages/datastructure/stack.js"
+      "static/chunks/pages/languages/Javascript.js"
     ],
-    "/datastructure/tree": [
+    "/languages/Python": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",
-      "static/chunks/pages/datastructure/tree.js"
+      "static/chunks/pages/languages/Python.js"
     ],
-    "/datastructure/trie": [
+    "/languages/Rust": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",
-      "static/chunks/pages/datastructure/trie.js"
+      "static/chunks/pages/languages/Rust.js"
+    ],
+    "/languages/Swift": [
+      "static/chunks/webpack.js",
+      "static/chunks/main.js",
+      "static/chunks/pages/languages/Swift.js"
     ]
   },
   "ampFirstPages": []

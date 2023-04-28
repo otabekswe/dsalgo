@@ -1,5 +1,19 @@
+# Python 
+
+Bu yerda siz o'rganib borayotgan ma'lumotlar tuzilmalari va algoritmlarning **Python** dasturlash tilidagi kod implementatsiyasini
+ko'rib o'rganib chiqsangiz bo'ladi. Biz imkon qadar kodlarni sizga tushuntirishga va sizni tasavvuringizni uyg'otishga harakat qilamiz.
+Har bir mavzuga tegishli kodlarni shu yerdan topishingiz mumkin. Agar sizga boshqa bir mavzu kerak bo'lsa o'ng tomondagi menu orqali
+o'zingiz hohlagan mavzuga tez o'tishingiz mumkin.
+
+Har bir kodni ustida komment orqali u nima vazifa bajarishini yozib o'tishga harakat qilamiz. Uni o'zingiz ham sinab ko'rishni unutmang!
+
+## Big O
+
+Big O notationda o'rgangan bilimlaringizni keling endi amaliyotlarda misollar bilan ko'rib chiqamiz va biz odatiy yozadigan kodlarimizni
+analiz qilishni o'rganamiz. Misol uchun pastdagi kodga e'tibor bering:
+
 ```python showLineNumbers
-def juftlar(arry : list[int]) -> list:
+def juftlar(arry: list[int]) -> list:
     result = []
     for num in arry:
         if num % 2 == 0:
@@ -7,268 +21,163 @@ def juftlar(arry : list[int]) -> list:
     return result
 ```
 
+Yuqoridagi kodning Time va Space Complexitysi nima deb o'ylaysiz? Keling tahlil qilamiz. Bu yerda for loop bor  demak bizni kodimiz
+linear harakat qiladi ya'ni bu qandaydir shartlar asosida emas berilgan uzunlik asosida birma-bir iteratsiya bo'ladi. Shuning xisobiga
+ko'ra bu `n` marta harakat qilayabdi. Ochilgan List esa har bir element uchun bitta xotira sarflaydi. Agar funksiyaga berilgan array 
+ichida faqat juft sonlar bo'lsa loop barcha listni iteratsiya qiladi. Biz shu tomonini ham o'ylagan holda uni ham `n` ta element oladi
+deb xisoblaymiz.
+
+**Time**: O(n)
+
+**Space** : O(n)
+
+---
+
+Keling endi keyingi misolga to'xtasak:
+
 ```python showLineNumbers
-def access_element(arr : list, index : int) -> any:
+def access_element(arr: list, index : int) -> any:
     return arr[index]
 ```
+Ushbu misolda bizning funksiya List olib uning berilgan indeksidagi elementni qaytarayabdi. Listlarda indeksga kirish uchun ketkaziladigan 
+vaqt O(1) bo'ladi. Xotira esa bu yerda 1 chunki biz hech qanday yangi data type yaratmayabmiz. Demak xulosa:
+
+**Time**: O(1)
+
+**Space** : O(1)
+
+---
 
 ```python showLineNumbers
-def sum_of_squares(n : int) -> int:
-    return (n * (n + 1) * (2 * n + 1)) // 6
-```
-
-
-```python showLineNumbers
-def summing(numbers : list) -> int:
+def summing(numbers: list) -> int:
     result = 0
     for num in numbers:
         result += num
     return result
 ```
 
+Mana bu misolga qaraylik, bu yerda vaziyat biroz boshqacha endi biz `result` o'zgaruvchisini increment qilayabmiz. Ya'ni ortiqcha 
+o'zgaruvchilar ochmagan holda faqat `result` ustida amal qilib yana unga qiymat saqlayabmiz (shunchaki update qilayabmiz). Shuni 
+inobatga olgan holda bu yerda space O(1) ga, time esa O(n) ga teng. Chunki bizning loop `n`ta amal bajaradi eng ko'pi bilan.
+
+Bunday misollarni ko'plab keltirishimiz mumkin ammo keling endi qolganlarini yo'l-yo'lakay ko'rib tahlil qilib ketamiz...
+
+## Array
+
+Python dasturlash tilida Array degan built-in data structure mavjud emas ammo uning ekvivalenti bor u esa **List**.
+
+> List - turli xil data typedagai ma'lumotlarni saqlab turuvchi konteyner xisoblanadi.
 
 ```python showLineNumbers
-def numered_num(num : int) -> None:
-    for i in range(num):
-        for j in range(num):
-            print(f"{i}.{j}")
-```
-
-
-```python showLineNumbers
-def summing(nums : list) -> int:
-    result = 0
-    for i in nums:
-        result += i
-    return result
-```
-
-```python showLineNumbers
-def sum_odds_evens(nums : list) -> str:
-    odds = 0
-    evens = 0
-    for i in nums:
-        if i % 2 == 0:
-            evens += i
-        else:
-            odds += i
-    return f"odds = {odds}, evens = {evens}"
-```
-
-
-```python showLineNumbers
-def count_frequency(arr : list) -> dict:
-    freq_dict = {}
-    
-    for elem in arr:
-        if elem not in freq_dict:
-            freq_dict[elem] = 0
-            
-        freq_dict[elem] += 1
-        
-    return freq_dict
-```
-
-```python showLineNumbers
-# Input: ["apple", "banana", "apple", "orange", "apple"]
-
-# Output: {'apple': 3, 'banana': 1, 'orange': 1}
-```
-
-
-```python showLineNumbers
-def generate_pairs(arr : list) -> list:
-    pairs = []
-    
-    for i in range(len(arr)):
-        for j in range(len(arr)):
-            pairs.append((arr[i], arr[j]))
-            
-    return pairs
-```
-
-
-
-```python showLineNumbers
-# Input: [1, 2, 3]
-
-# Output: [(3, 3), (3, 6), (3, 9), (6, 3), (6, 6), (6, 9), (9, 3), (9, 6), (9, 9)]
-```
-
-
-
-
-Har qanday dasturlash tilida bu nomlar boshqacha atalsada Computer Science da ularning nomi bitta bo'ladi. Python dasturlash tilida Array degan nomdagi Data Structure bo'lmasa ammo u mavjud shunchaki **List** nomi bilan.
-
-> Pythonda List - turli xil data typedagai ma'lumotlarni saqlab turuvchi konteyner xisoblanadi.
-
-```python showLineNumbers
+# Pythonda List yaratish:
 my_list = ['o', 'apple', 17, 3.14]
+
+# Bo'sh list yaratish:
+new_list = list() 
+
+# yoki
+new_list = []
 ```
 
-Keling bugundan boshlab biz **Array** tushunchasini umumiy tarzda olsak va qachonki **Array** so'zi ishlatilsa biz uni Python dasturlash tilida **List**ligini tushuna olaylik.
+### List metodlari
 
-## **Creating an array - Massiv yaratish**
+![List metodlari](../../images/list_method.jpg)
 
-```python showLineNumbers
-names = ["Jonh", "Alan", "Charlie", "George"] # Listni qiymatlar bilan yaratish.
+Yuqoridagi rasmda ba'zi metodlar keltirilgan ularni shunchaki ko'rib emas balkim ishlatib ko'rishni ham maslahat beraman. Agar siz ko'proq
+metodlar haqida o'rganmoqchi bo'lsangiz [Python dokumentatsiyasida](https://docs.python.org/3/tutorial/datastructures.html) ko'proq yoritib o'tilgan.
 
-my_list = [] # Bo'sh list yaratish
-my_list = list() # Bo'sh list yaratishning yana bir yo'li
-
-numbers = list(range(1, 100)) # range() orqali 1-99 gacha sonlar listini yaratish.
-
-# Listni print qilish mumkin
-print(names)
-print(my_list)
-print(numbers)
-```
-
-Python Listlari ichiga biz string, integer, float, character, function va biz istagan ma'lumot turimizni kiritishimiz mumkin. Ba'zan biz List ichida List ko'rib qolishimiz ham mumkin va bu aytib o'tganimizdek List hohlagan data typedagi ma'lumotni o'z ichida saqlay oladi.
+### Indexes
 
 ![Array with Indexes](../../images/array_indices.webp)
 
-Ularning ichidagi elementlarni access qilish ya'ni kirish uchun biz **Index**lardan foydalanamiz. Yuqoridagi rasmda ko'rib turganingizdek sanoq 1 dan emas 0 dan boshlangan.
+List ichidagi elementlarni access qilish ya'ni kirish uchun biz **index**lardan foydalanamiz. Yuqoridagi rasmda ko'rib turganingizdek sanoq 1 
+dan emas 0 dan boshlangan.
 
-> **Xazil**: Agar sizga biror dasturchi sen mening birinchi muhabbatimsan desa ishonmang. Chunki dasturlashda sanoq 0dan boshlanadi. 😉
-
-Qiymatlarni ammo qanday olishni tushunmagan bo'lsangiz pastdagi kodga qarang:
+> **Xazil**: Agar sizga biror dasturchi sen mening birinchi muhabbatimsan desa ishonmang. Chunki dasturlashda sanoq 0dan boshlanadi. 😌
 
 ```python showLineNumbers
 nums = [3, 8, 1, 0, 5, -2, 32] # Rasmdagi list 
 
-print(nums[3]) # Array ichidan 3chi indeksdagi qiymatni oldik.
+print(nums[3]) # List ichidan 3chi indeksdagi qiymatni oldik.
 ```
 
-## **List Methods - List metodlari**
+### Slicing
 
-Pythonda hamma narsa object agar siz OOP ni yaxshi bilmasangiz bu tushuncha sizga biroz g'alati tuyilishi mumkin ammo hech qisi yo'q Internet to'la ma'lumot shunchaki o'rganib chiqishni hoziroq boshlang. 
-
-Agar siz OOPni allaqachon bilsangiz tabriklayman demak siz method va function farqiga boradigan insonsiz. Bilamizki `class`lar ichida tuziladigan har qanday function bu method deb ataladi. List methodlari ham juda ko'p ammo keling bulardan ba'zilari qanday ishlashini mana bu rasm orqali ko'rsak.
-
-![List metodlari](../../images/list_method.jpg)
-
-Tepadagi rasmda ularning qanday ishlashi tasvirlangan va yaxshilab e'tibor bersangiz farqiga borish qiyin emas menimcha
-Tepadagi rasmda ularning qanday ishlashi tasvirlangan va yaxshilab e'tibor bersangiz farqiga borish qiyin emas (menimcha).
-
-Ularni qanday ishlatamiz desangiz keling bir ikkita misol ko'rsak:
-
-```python showLineNumbers
-ls = [1, 2, 3] # ls degan list ochib oldik ichida 1,2,3 qiymatlari bor
-
-
-ls.append(5) # biz hozir listimizni oxiriga 5 ni qo'shdik
-# Output: [1, 2, 3, 5]
-
-
-ls.remove(2) # biz hozir 2 qiymatini listdan o'chirdik
-# Output: [1, 3, 5]
-
-
-ls.pop(2) # Biz hozir 2-indeksdagi elemetni o'chirdik
-# Output: [1, 3]
-```
-
-## **Slicing - Kesish**
-
-Tasavvur qiling sizda 100ta elementli list bor ammo sizga uni faqat 20-50 ideks oralig'idagi qiymatlari kerak. Bunday holatda sizga listdagi qiymatlarni o'chirish emas balkim shunchaki uni bo'lish kifoya qiladi.
+Tasavvur qiling sizda 100ta elementli list bor ammo sizga uni faqat 20-50 ideks oralig'idagi qiymatlari kerak. Bunday holatda sizga 
+listdagi qiymatlarni o'chirish emas balkim shunchaki uni bo'laklarga bo'lish kifoya qiladi.
 
 ![List Slicing](../../images/list_slice.png)
 
-Ko'rib turibsizki biz o'zimizga kerakli qismini shunchaki kiritish orqali bu narsaga erishdik va uning formulasi quyidagicha
-
-```python showLineNumbers
-list[start:stop]
-
-# start - boshlang'ich nuqta
-# step - tugash nuqtasi
-# : - oraliq belgisi
-
-# Yani start dan Y oraliqgacha qiymatlar deyilsa bo'ladi.
-
-ls = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10] 
-
-# Agar sizga 4 dan 8 gacha oraliqdagi raqamlar kerak bo'lsa:
-ls[3:8]
-
-# Agar sizga boshidan 6 chi qiymatgacha kerak bo'lsa start ni tashlab ketsangiz bo'ladi:
-ls[:6]
-
-# Agar sizga 6 indeksdan oxirigacha bo'lgan raqamlar kerak bo'lsa step ni tashlab ketsangiz bo'ladi:
-ls[6:]
-
-# Agar sizga barcha qiymatlar kerak bo'lsa start ni ham y ni ham tashlab yuborsangiz bo'ladi:
-ls[:]
-```
-
-Kodlarni yozib mashq qiling shunda yana ham yaxshiroq tushunasiz...
-
-## **Step - Qadam**
-
-Siz ikki oraliqdagi qiymatlarni tanlab ham har nechtadir qadam tashlashingiz ham mumkin.
-
 ```python showLineNumbers
 list[start:stop:step]
+# start - boshlang'ich nuqta
+# step - tugash nuqtasi
+# step - qadam
+ls = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10] 
 
-# step - bu qadam
-
-nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-
-nums[1:8:2] # Bu 1-8 oraliqdagi qiymatlarni ol ammo ular orasida 2ta qadam tashla
-
-# Jarayon: 
-# 1-qadam: Listni kesib olish:
-# 
-# Listni o'zi:  [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-# indekslari:    0  1  2  3  4  5  6  7  8  9
-# 
-# 
-# Kesilgan varianti: [2, 3, 4, 5, 6, 7, 8]
-# 
-# 
-# 2-qadam: Qadam yurish:
-# 
-#          [2, 3, 4, 5, 6, 7, 8]
-#          ⬆     ⬆    ⬆    ⬆
-
-
-# Output: [2, 4, 6, 8]
-
+ls[2:]    # [3, 4, 5, 6, 7, 8, 9, 10]
+ls[1:6]   # [2, 3, 4, 5, 6]
+ls[:5]    # [1, 2, 3, 4, 5]
+ls[1:4:2] # [2, 4]
+ls[::2]   # [1, 3, 5, 7, 9]
+ls[::-1]  # [10, 9, 8, 7, 6, 5, 4, 3, 2, 1]
+ls[::-2]  # [10, 8, 6, 4, 2]
 ```
 
-Pythonda Array bor va uni yaratish uchun yoki tushunish uchun siz shunchaki **[array](https://docs.python.org/3/library/array.html)** degan Python Standart Library ishlatishingiz kerak:
+Yuqorida keltirilgan misollarni tushunishlik uchun ozgina tahlil qilib o'zingiz ham mashq qilib ko'ring.
+
+### Python Array
+
+Pythonda Array bor va uni yaratish uchun yoki tushunish uchun siz shunchaki **[array](https://docs.python.org/3/library/array.html)** Python 
+Standart Library ishlatishingiz kerak:
 
 ```python showLineNumbers
 from array import array
 
-nums = array('l', [1, 2, 3, 4, 5]) # l - singned long ya'ni raqamlar bor list
+nums = array('l', [1, 2, 3, 4, 5]) 
 
-# Qolgan amallar xuddi listdek ishlatilaveradi faqat boshqacha yaratiladi.
+nums.append(0) # array('l', [1, 2, 3, 4, 5, 0]) 
+nums.remove(3) # array('l', [1, 2, 4, 5, 0]) 
+...
+
+print(nums[2]) # 4
+# Qolgan amallar xuddi listdek ishlatilaveradi. array yaratilishi boshqacha
 ```
 
-Ammo biz ushbu darsda bu kutubxonani to'liq ishlatmaymiz ammo sizga list va arrayni taqqoslab ular qanday ishlatilishini ko'rsatib o'tdik. Qolgan ma'lumotlarni link orqali o'zingiz o'rganishingiz mumkin.
+Ammo biz ushbu qo'llanmada bu kutubxonani to'liq ishlatmaymiz ammo sizga list va arrayni taqqoslab ular qanday ishlatilishini qisqacha ko'rsatib 
+o'tdik. Qolgan ma'lumotlarni link orqali o'zingiz o'rganishingiz mumkin.
 
 > https://docs.python.org/3/library/array.html
 
-## **Array vs List**
+Keling endi ularni farqi nimadaligiga biroz chuqurroq kirishamiz. Pythonda hamma narsa object, xattoki funksiyalar ham. List esa juda moslashuvchan
+va ixtiyoriy ma'lumotlarni saqlashi mumkin, ammo ular Arrayga qaraganda ko'proq xotira ishlatadi. Pastdagi rasmga e'tibor bering:
 
 ![List vs Array](../../images/array%20vs%20list.svg)
 
-Python list juda moslashuvchan va ixtiyoriy ma'lumotlarni saqlashi mumkin, ammo ular Python arrayga qaraganda ko'proq joy ishlatadi. Har bir list pointer ichidagi pointer blokini o'z ichiga oladi va natijada biz birinchi doim memory pointer ga boramiz va undan keyin object pointerga boramiz.
+Har bir list pointer ichidagi pointer blokini xosil qiladi, natijada biz birinchi doim memory pointerga boramiz va undan keyin object 
+pointerga boramiz. Tushunarliroq qiladigan bo'lsak tasavvur qiling sizda `my_list = [1, 2, 3, 4, 5]` mavjud va siz `my_list[2]` ni olmoqchisiz.
+Bu yerda python interpreter birinchi bo'lib `my_list`ni xotirada qayerda joylashganini aniqlaydi. So'ngra `my_list`da 2chi indexni xisoblaydi va 
+keyin sizga siz hohlagan elementni qaytaradi.
 
-Shunga qaramay, listning afzalligi moslashuvchanlikda. Har bir list elementi ma'lumotlar va tur ma'lumotlarini o'z ichiga ololadigan to'liq tuzilma bo'lganligi uchun, list istalgan turdagi ma'lumotlarni o'z ichiga ololadi. Massivlar bunday moslashuvchanlikka ega emas, lekin ma'lumotlarni saqlash va boshqarish uchun ancha samaraliroq.
+Arrayda esa xolat biroz boshqacha va keling yuqoridagi list misolini array qilib olamiz. Python interpreter `my_list` degan arrayni 
+birinchi qiymatini qidiradi. Va xotirani hozirgi hex qiymatiga biz hohlagan indeksni qo'shish orqali o'sha elementga oson kiradi. 
 
-Ikkalasi o'rtasidagi farqlar asosan yuqorida aytib o'tilgan backend ilovasi tufayli mavjud. Python-dagi massivlar xuddi C massivlari kabi amalga oshiriladi, ko'rsatgich massivning birinchi elementiga ishora qiladi, qolganlari esa xotirada yonma-yon joylashgan.
+Listni afzalliklaridan ba'zilari bu uning kengayib, kichirayishida. List yana boshqa turdagi ma'lumotlarni ham saqlay oladi.
 
-## **When to use which? - Qaysi birini qachon ishlatish kerak?**
+Arrayning afzalliklaridan ba'zilari bu uning tezligida va listga nisbatan qaralganda ancha kam xotira sarflashida. Array faqat 
+bir xil turdagi ma'lumotlarni o'zida saqlay oladi va uning xajmi o'zgarmaydi.
 
-- Agar siz o'sishda va qisqartirishda vaqtdan yutmoqchi bo'lsangiz List ishlating.
-
-- Agar sizga istalgan turdagi ma'lumotlar saqlash kerak bo'lsa Listni ishlating.
-
-- Agar sizga xotiradan tejash va ko'p qiymatlarni saqlash kerak bo'lsa array ishlating. Array ko'p sonli ma'lumotlar ustida ammallarni ham ancha samarali bajaradi. 
-
-## **Challenges**
+### Challenges
 
 1. [Merge Two sorted list](https://leetcode.com/problems/merge-two-sorted-lists/)
 2. [Find two number that sums up to K](https://www.google.com/search?q=Find+two+number+that+up+to+k&oq=Find+two+number+that+up+to+k&aqs=chrome..69i57.6405j0j9&sourceid=chrome&ie=UTF-8)
+
+## Linked List
+
+Linked List pythonda built-in data structure sifatida kiritilmagan. Biz uni classlar yordamida yaratamiz chunki pythonda hamma narsa object.
+
+### Singly Linked List 
+
+### Doubly Linked List 
+
+### Circular Linked List 
