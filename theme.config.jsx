@@ -20,7 +20,8 @@ export default {
       text: <span style={{textAlign: 'center', display: 'block', width: '100%'}}>
         © 2023 | dsa.uz
       </span>,
-    }
+    },
+    faviconGlyph: "🧑🏻‍💻"
     
     // ...
   }
