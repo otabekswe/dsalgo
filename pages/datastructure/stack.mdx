@@ -1,3 +1,35 @@
 ## Stack
 
-> Tez orada
+**Stack** linear ma'lumot strukturasi bo'lib **LIFO (Last In First Out)** tamoyili asosida ishlaydi. Ya'ni **Oxiri kirgan birinchi chiqadi**. 
+Buning asosiy ma'nosi shundaki biz arraydagi elementlar ketma-ket joylashishini tasavvur qilsak, stackda esa ularni ustma-ust deb tasavvur 
+qilishimiz kerak. Misol uchun mana bu rasmdagi kitoblar singari:
+
+![Stack of books](../../images/stack_of_books.jpg)
+
+Kitoblar ustma-ust tahlangan va eng yuqorisidagi birinchi olinadi, agar yangi kitob qo'shilsa yuqori qismiga tushadi. Juda sodda bo'lmasada 
+menimcha sizga bu tushunarli bo'ldi deb umid qilaman. Keling uning asosiy operatsiyalari haqida gaplashsak:
+
+- `push(element)` - to'plamga berilgan elementni qo'shish uchun ishlatiladi.
+- `pop()` - to'plamning eng yuqorisidan elementni olib tashlash uchun ishlatiladi.
+- `peek()` - to'plamning eng yuqorisidagi elementni o'chirmay qaytarish uchun ishlatiladi.
+- `is_empty()` - to'plam to'la yoki to'la emasligini tekshirish uchun ishlatiladi.
+
+Agar siz biror elementni eng pastiga qo'shmoqchi bo'lsangiz avval yuqorida turgan barcha elementlarni olib keyin uni qo'shishingizga 
+to'g'ri keladi.
+
+### LIFO tamoyili
+
+Ushbu tamoyliga asoslanib aytishim mumkinki, `push()` elementni yuqori qismiga qo'shsa, `pop()` yuqoridan elementlarni olish uchun ishlatiladi.
+
+![Stack of books](../../images/stack_operations.webp)
+
+Yuqoridagi rasmda elementlar qanday qo'shilishi va qanday olinishi haqida qisqacha ko'rsatib o'tilgan. Aynan shu amallar bizga **LIFO** ya'ni 
+**Last In First Out** tamoyili qanday ishlashini ko'rsatib beradi.
+
+> Agar stack to'lib qolib boshqa element qabul qilmay qolsa, bu xabarni boshqalarga aytish uchun biz "Stack overflow" deymiz 😁. (xazil emas)
+
+Biz Stackni turli xil yo'llar bilan implement qila olamiz. Ba'zi dasturlash tillarida Array ishlatsak ba'zilarida esa linked list ishlatamiz.
+Asosiy faktor o'sha dasturlash tilida array qanchalik flexible (moslashuvchan) ekanligiga qarab tanlov qilinadi.
+
+Qisqacha qilganda Stack haqida shular edi. Endi esa uni qanday qilib siz bilgan dasturlash tilida kodga tushirishni ko'rib, o'rganib, 
+mashq qilib chiqing. Keyin esa sayohatni yana birgalikda davom etamiz...
